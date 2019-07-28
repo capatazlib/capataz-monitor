@@ -3,12 +3,12 @@ help:	## Display this message
 .PHONY: help
 .DEFAULT_GOAL := help
 
-PROTO_FILES    = $(shell find proto -name '*.proto')
-PROTO_RS_FILES = $(PROTO_FILES:proto/%.proto=src/%.rs)
+PROTO_DIR      = ../proto
+PROTO_FILES    = $(shell find $(PROTO_DIR) -name '*.proto')
+PROTO_RS_FILES = $(PROTO_FILES:$(PROTO_DIR)/%.proto=src/%.rs)
 
-src/%.rs: proto/%.proto
-	protoc --rust_out $(dir $@) $^
+src/%.rs: $(PROTO_DIR)/%.proto
+	protoc --rust_out $(dir $@) -I $(dir $^) $(notdir $^)
 
 proto: $(PROTO_RS_FILES) ## Generate protobuf files
-
 .PHONY: proto
