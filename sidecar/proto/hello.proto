@@ -1,5 +1,7 @@
 syntax = "proto3";
 
+import "google/protobuf/timestamp.proto";
+
 message Greeting {
   string person = 1;
   string language = 2;
@@ -7,4 +9,53 @@ message Greeting {
 
 message GreetingList {
   repeated Greeting greetings = 1;
+}
+
+////////////////////////////////////////////////////////////////////////////////
+
+enum ProcessTag {
+  WORKER = 0;
+  SUPERVISOR = 1;
+}
+
+message ProcessInfo {
+  string eventId  = 1;
+  string workerId = 2;
+  string parentId = 3;
+}
+
+message ProcessStarted {
+  ProcessInfo info = 1;
+  ProcessTag tag = 2;
+  google.protobuf.Timestamp createTimestamp = 3;
+  string firstRestartTimestamp = 4;
+  uint32 restartCount = 5;
+}
+
+message ProcessTerminated {
+  ProcessInfo info = 1;
+  ProcessTag tag = 2;
+  google.protobuf.Timestamp createTimestamp = 3;
+}
+
+message ProcessCompleted {
+  ProcessInfo info = 1;
+  ProcessTag tag = 2;
+  google.protobuf.Timestamp createTimestamp = 3;
+}
+
+message ProcessFailed {
+  ProcessInfo info = 1;
+  ProcessTag tag = 2;
+  string error = 3;
+  google.protobuf.Timestamp createTimestamp = 4;
+}
+
+message ProcessEvent {
+  oneof payload {
+    ProcessStarted processStarted = 1;
+    ProcessTerminated processTerminated = 2;
+    ProcessCompleted processCompleted = 3;
+    ProcessFailed processFailed = 4;
+  }
 }

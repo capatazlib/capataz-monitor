@@ -413,24 +413,2095 @@ impl ::protobuf::reflect::ProtobufValue for GreetingList {
     }
 }
 
+#[derive(PartialEq,Clone,Default)]
+pub struct ProcessInfo {
+    // message fields
+    pub eventId: ::std::string::String,
+    pub workerId: ::std::string::String,
+    pub parentId: ::std::string::String,
+    // special fields
+    pub unknown_fields: ::protobuf::UnknownFields,
+    pub cached_size: ::protobuf::CachedSize,
+}
+
+impl<'a> ::std::default::Default for &'a ProcessInfo {
+    fn default() -> &'a ProcessInfo {
+        <ProcessInfo as ::protobuf::Message>::default_instance()
+    }
+}
+
+impl ProcessInfo {
+    pub fn new() -> ProcessInfo {
+        ::std::default::Default::default()
+    }
+
+    // string eventId = 1;
+
+
+    pub fn get_eventId(&self) -> &str {
+        &self.eventId
+    }
+    pub fn clear_eventId(&mut self) {
+        self.eventId.clear();
+    }
+
+    // Param is passed by value, moved
+    pub fn set_eventId(&mut self, v: ::std::string::String) {
+        self.eventId = v;
+    }
+
+    // Mutable pointer to the field.
+    // If field is not initialized, it is initialized with default value first.
+    pub fn mut_eventId(&mut self) -> &mut ::std::string::String {
+        &mut self.eventId
+    }
+
+    // Take field
+    pub fn take_eventId(&mut self) -> ::std::string::String {
+        ::std::mem::replace(&mut self.eventId, ::std::string::String::new())
+    }
+
+    // string workerId = 2;
+
+
+    pub fn get_workerId(&self) -> &str {
+        &self.workerId
+    }
+    pub fn clear_workerId(&mut self) {
+        self.workerId.clear();
+    }
+
+    // Param is passed by value, moved
+    pub fn set_workerId(&mut self, v: ::std::string::String) {
+        self.workerId = v;
+    }
+
+    // Mutable pointer to the field.
+    // If field is not initialized, it is initialized with default value first.
+    pub fn mut_workerId(&mut self) -> &mut ::std::string::String {
+        &mut self.workerId
+    }
+
+    // Take field
+    pub fn take_workerId(&mut self) -> ::std::string::String {
+        ::std::mem::replace(&mut self.workerId, ::std::string::String::new())
+    }
+
+    // string parentId = 3;
+
+
+    pub fn get_parentId(&self) -> &str {
+        &self.parentId
+    }
+    pub fn clear_parentId(&mut self) {
+        self.parentId.clear();
+    }
+
+    // Param is passed by value, moved
+    pub fn set_parentId(&mut self, v: ::std::string::String) {
+        self.parentId = v;
+    }
+
+    // Mutable pointer to the field.
+    // If field is not initialized, it is initialized with default value first.
+    pub fn mut_parentId(&mut self) -> &mut ::std::string::String {
+        &mut self.parentId
+    }
+
+    // Take field
+    pub fn take_parentId(&mut self) -> ::std::string::String {
+        ::std::mem::replace(&mut self.parentId, ::std::string::String::new())
+    }
+}
+
+impl ::protobuf::Message for ProcessInfo {
+    fn is_initialized(&self) -> bool {
+        true
+    }
+
+    fn merge_from(&mut self, is: &mut ::protobuf::CodedInputStream) -> ::protobuf::ProtobufResult<()> {
+        while !is.eof()? {
+            let (field_number, wire_type) = is.read_tag_unpack()?;
+            match field_number {
+                1 => {
+                    ::protobuf::rt::read_singular_proto3_string_into(wire_type, is, &mut self.eventId)?;
+                },
+                2 => {
+                    ::protobuf::rt::read_singular_proto3_string_into(wire_type, is, &mut self.workerId)?;
+                },
+                3 => {
+                    ::protobuf::rt::read_singular_proto3_string_into(wire_type, is, &mut self.parentId)?;
+                },
+                _ => {
+                    ::protobuf::rt::read_unknown_or_skip_group(field_number, wire_type, is, self.mut_unknown_fields())?;
+                },
+            };
+        }
+        ::std::result::Result::Ok(())
+    }
+
+    // Compute sizes of nested messages
+    #[allow(unused_variables)]
+    fn compute_size(&self) -> u32 {
+        let mut my_size = 0;
+        if !self.eventId.is_empty() {
+            my_size += ::protobuf::rt::string_size(1, &self.eventId);
+        }
+        if !self.workerId.is_empty() {
+            my_size += ::protobuf::rt::string_size(2, &self.workerId);
+        }
+        if !self.parentId.is_empty() {
+            my_size += ::protobuf::rt::string_size(3, &self.parentId);
+        }
+        my_size += ::protobuf::rt::unknown_fields_size(self.get_unknown_fields());
+        self.cached_size.set(my_size);
+        my_size
+    }
+
+    fn write_to_with_cached_sizes(&self, os: &mut ::protobuf::CodedOutputStream) -> ::protobuf::ProtobufResult<()> {
+        if !self.eventId.is_empty() {
+            os.write_string(1, &self.eventId)?;
+        }
+        if !self.workerId.is_empty() {
+            os.write_string(2, &self.workerId)?;
+        }
+        if !self.parentId.is_empty() {
+            os.write_string(3, &self.parentId)?;
+        }
+        os.write_unknown_fields(self.get_unknown_fields())?;
+        ::std::result::Result::Ok(())
+    }
+
+    fn get_cached_size(&self) -> u32 {
+        self.cached_size.get()
+    }
+
+    fn get_unknown_fields(&self) -> &::protobuf::UnknownFields {
+        &self.unknown_fields
+    }
+
+    fn mut_unknown_fields(&mut self) -> &mut ::protobuf::UnknownFields {
+        &mut self.unknown_fields
+    }
+
+    fn as_any(&self) -> &dyn (::std::any::Any) {
+        self as &dyn (::std::any::Any)
+    }
+    fn as_any_mut(&mut self) -> &mut dyn (::std::any::Any) {
+        self as &mut dyn (::std::any::Any)
+    }
+    fn into_any(self: Box<Self>) -> ::std::boxed::Box<dyn (::std::any::Any)> {
+        self
+    }
+
+    fn descriptor(&self) -> &'static ::protobuf::reflect::MessageDescriptor {
+        Self::descriptor_static()
+    }
+
+    fn new() -> ProcessInfo {
+        ProcessInfo::new()
+    }
+
+    fn descriptor_static() -> &'static ::protobuf::reflect::MessageDescriptor {
+        static mut descriptor: ::protobuf::lazy::Lazy<::protobuf::reflect::MessageDescriptor> = ::protobuf::lazy::Lazy {
+            lock: ::protobuf::lazy::ONCE_INIT,
+            ptr: 0 as *const ::protobuf::reflect::MessageDescriptor,
+        };
+        unsafe {
+            descriptor.get(|| {
+                let mut fields = ::std::vec::Vec::new();
+                fields.push(::protobuf::reflect::accessor::make_simple_field_accessor::<_, ::protobuf::types::ProtobufTypeString>(
+                    "eventId",
+                    |m: &ProcessInfo| { &m.eventId },
+                    |m: &mut ProcessInfo| { &mut m.eventId },
+                ));
+                fields.push(::protobuf::reflect::accessor::make_simple_field_accessor::<_, ::protobuf::types::ProtobufTypeString>(
+                    "workerId",
+                    |m: &ProcessInfo| { &m.workerId },
+                    |m: &mut ProcessInfo| { &mut m.workerId },
+                ));
+                fields.push(::protobuf::reflect::accessor::make_simple_field_accessor::<_, ::protobuf::types::ProtobufTypeString>(
+                    "parentId",
+                    |m: &ProcessInfo| { &m.parentId },
+                    |m: &mut ProcessInfo| { &mut m.parentId },
+                ));
+                ::protobuf::reflect::MessageDescriptor::new::<ProcessInfo>(
+                    "ProcessInfo",
+                    fields,
+                    file_descriptor_proto()
+                )
+            })
+        }
+    }
+
+    fn default_instance() -> &'static ProcessInfo {
+        static mut instance: ::protobuf::lazy::Lazy<ProcessInfo> = ::protobuf::lazy::Lazy {
+            lock: ::protobuf::lazy::ONCE_INIT,
+            ptr: 0 as *const ProcessInfo,
+        };
+        unsafe {
+            instance.get(ProcessInfo::new)
+        }
+    }
+}
+
+impl ::protobuf::Clear for ProcessInfo {
+    fn clear(&mut self) {
+        self.eventId.clear();
+        self.workerId.clear();
+        self.parentId.clear();
+        self.unknown_fields.clear();
+    }
+}
+
+impl ::std::fmt::Debug for ProcessInfo {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        ::protobuf::text_format::fmt(self, f)
+    }
+}
+
+impl ::protobuf::reflect::ProtobufValue for ProcessInfo {
+    fn as_ref(&self) -> ::protobuf::reflect::ProtobufValueRef {
+        ::protobuf::reflect::ProtobufValueRef::Message(self)
+    }
+}
+
+#[derive(PartialEq,Clone,Default)]
+pub struct ProcessStarted {
+    // message fields
+    pub info: ::protobuf::SingularPtrField<ProcessInfo>,
+    pub tag: ProcessTag,
+    pub createTimestamp: ::protobuf::SingularPtrField<::protobuf::well_known_types::Timestamp>,
+    pub firstRestartTimestamp: ::std::string::String,
+    pub restartCount: u32,
+    // special fields
+    pub unknown_fields: ::protobuf::UnknownFields,
+    pub cached_size: ::protobuf::CachedSize,
+}
+
+impl<'a> ::std::default::Default for &'a ProcessStarted {
+    fn default() -> &'a ProcessStarted {
+        <ProcessStarted as ::protobuf::Message>::default_instance()
+    }
+}
+
+impl ProcessStarted {
+    pub fn new() -> ProcessStarted {
+        ::std::default::Default::default()
+    }
+
+    // .ProcessInfo info = 1;
+
+
+    pub fn get_info(&self) -> &ProcessInfo {
+        self.info.as_ref().unwrap_or_else(|| ProcessInfo::default_instance())
+    }
+    pub fn clear_info(&mut self) {
+        self.info.clear();
+    }
+
+    pub fn has_info(&self) -> bool {
+        self.info.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_info(&mut self, v: ProcessInfo) {
+        self.info = ::protobuf::SingularPtrField::some(v);
+    }
+
+    // Mutable pointer to the field.
+    // If field is not initialized, it is initialized with default value first.
+    pub fn mut_info(&mut self) -> &mut ProcessInfo {
+        if self.info.is_none() {
+            self.info.set_default();
+        }
+        self.info.as_mut().unwrap()
+    }
+
+    // Take field
+    pub fn take_info(&mut self) -> ProcessInfo {
+        self.info.take().unwrap_or_else(|| ProcessInfo::new())
+    }
+
+    // .ProcessTag tag = 2;
+
+
+    pub fn get_tag(&self) -> ProcessTag {
+        self.tag
+    }
+    pub fn clear_tag(&mut self) {
+        self.tag = ProcessTag::WORKER;
+    }
+
+    // Param is passed by value, moved
+    pub fn set_tag(&mut self, v: ProcessTag) {
+        self.tag = v;
+    }
+
+    // .google.protobuf.Timestamp createTimestamp = 3;
+
+
+    pub fn get_createTimestamp(&self) -> &::protobuf::well_known_types::Timestamp {
+        self.createTimestamp.as_ref().unwrap_or_else(|| ::protobuf::well_known_types::Timestamp::default_instance())
+    }
+    pub fn clear_createTimestamp(&mut self) {
+        self.createTimestamp.clear();
+    }
+
+    pub fn has_createTimestamp(&self) -> bool {
+        self.createTimestamp.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_createTimestamp(&mut self, v: ::protobuf::well_known_types::Timestamp) {
+        self.createTimestamp = ::protobuf::SingularPtrField::some(v);
+    }
+
+    // Mutable pointer to the field.
+    // If field is not initialized, it is initialized with default value first.
+    pub fn mut_createTimestamp(&mut self) -> &mut ::protobuf::well_known_types::Timestamp {
+        if self.createTimestamp.is_none() {
+            self.createTimestamp.set_default();
+        }
+        self.createTimestamp.as_mut().unwrap()
+    }
+
+    // Take field
+    pub fn take_createTimestamp(&mut self) -> ::protobuf::well_known_types::Timestamp {
+        self.createTimestamp.take().unwrap_or_else(|| ::protobuf::well_known_types::Timestamp::new())
+    }
+
+    // string firstRestartTimestamp = 4;
+
+
+    pub fn get_firstRestartTimestamp(&self) -> &str {
+        &self.firstRestartTimestamp
+    }
+    pub fn clear_firstRestartTimestamp(&mut self) {
+        self.firstRestartTimestamp.clear();
+    }
+
+    // Param is passed by value, moved
+    pub fn set_firstRestartTimestamp(&mut self, v: ::std::string::String) {
+        self.firstRestartTimestamp = v;
+    }
+
+    // Mutable pointer to the field.
+    // If field is not initialized, it is initialized with default value first.
+    pub fn mut_firstRestartTimestamp(&mut self) -> &mut ::std::string::String {
+        &mut self.firstRestartTimestamp
+    }
+
+    // Take field
+    pub fn take_firstRestartTimestamp(&mut self) -> ::std::string::String {
+        ::std::mem::replace(&mut self.firstRestartTimestamp, ::std::string::String::new())
+    }
+
+    // uint32 restartCount = 5;
+
+
+    pub fn get_restartCount(&self) -> u32 {
+        self.restartCount
+    }
+    pub fn clear_restartCount(&mut self) {
+        self.restartCount = 0;
+    }
+
+    // Param is passed by value, moved
+    pub fn set_restartCount(&mut self, v: u32) {
+        self.restartCount = v;
+    }
+}
+
+impl ::protobuf::Message for ProcessStarted {
+    fn is_initialized(&self) -> bool {
+        for v in &self.info {
+            if !v.is_initialized() {
+                return false;
+            }
+        };
+        for v in &self.createTimestamp {
+            if !v.is_initialized() {
+                return false;
+            }
+        };
+        true
+    }
+
+    fn merge_from(&mut self, is: &mut ::protobuf::CodedInputStream) -> ::protobuf::ProtobufResult<()> {
+        while !is.eof()? {
+            let (field_number, wire_type) = is.read_tag_unpack()?;
+            match field_number {
+                1 => {
+                    ::protobuf::rt::read_singular_message_into(wire_type, is, &mut self.info)?;
+                },
+                2 => {
+                    ::protobuf::rt::read_proto3_enum_with_unknown_fields_into(wire_type, is, &mut self.tag, 2, &mut self.unknown_fields)?
+                },
+                3 => {
+                    ::protobuf::rt::read_singular_message_into(wire_type, is, &mut self.createTimestamp)?;
+                },
+                4 => {
+                    ::protobuf::rt::read_singular_proto3_string_into(wire_type, is, &mut self.firstRestartTimestamp)?;
+                },
+                5 => {
+                    if wire_type != ::protobuf::wire_format::WireTypeVarint {
+                        return ::std::result::Result::Err(::protobuf::rt::unexpected_wire_type(wire_type));
+                    }
+                    let tmp = is.read_uint32()?;
+                    self.restartCount = tmp;
+                },
+                _ => {
+                    ::protobuf::rt::read_unknown_or_skip_group(field_number, wire_type, is, self.mut_unknown_fields())?;
+                },
+            };
+        }
+        ::std::result::Result::Ok(())
+    }
+
+    // Compute sizes of nested messages
+    #[allow(unused_variables)]
+    fn compute_size(&self) -> u32 {
+        let mut my_size = 0;
+        if let Some(ref v) = self.info.as_ref() {
+            let len = v.compute_size();
+            my_size += 1 + ::protobuf::rt::compute_raw_varint32_size(len) + len;
+        }
+        if self.tag != ProcessTag::WORKER {
+            my_size += ::protobuf::rt::enum_size(2, self.tag);
+        }
+        if let Some(ref v) = self.createTimestamp.as_ref() {
+            let len = v.compute_size();
+            my_size += 1 + ::protobuf::rt::compute_raw_varint32_size(len) + len;
+        }
+        if !self.firstRestartTimestamp.is_empty() {
+            my_size += ::protobuf::rt::string_size(4, &self.firstRestartTimestamp);
+        }
+        if self.restartCount != 0 {
+            my_size += ::protobuf::rt::value_size(5, self.restartCount, ::protobuf::wire_format::WireTypeVarint);
+        }
+        my_size += ::protobuf::rt::unknown_fields_size(self.get_unknown_fields());
+        self.cached_size.set(my_size);
+        my_size
+    }
+
+    fn write_to_with_cached_sizes(&self, os: &mut ::protobuf::CodedOutputStream) -> ::protobuf::ProtobufResult<()> {
+        if let Some(ref v) = self.info.as_ref() {
+            os.write_tag(1, ::protobuf::wire_format::WireTypeLengthDelimited)?;
+            os.write_raw_varint32(v.get_cached_size())?;
+            v.write_to_with_cached_sizes(os)?;
+        }
+        if self.tag != ProcessTag::WORKER {
+            os.write_enum(2, self.tag.value())?;
+        }
+        if let Some(ref v) = self.createTimestamp.as_ref() {
+            os.write_tag(3, ::protobuf::wire_format::WireTypeLengthDelimited)?;
+            os.write_raw_varint32(v.get_cached_size())?;
+            v.write_to_with_cached_sizes(os)?;
+        }
+        if !self.firstRestartTimestamp.is_empty() {
+            os.write_string(4, &self.firstRestartTimestamp)?;
+        }
+        if self.restartCount != 0 {
+            os.write_uint32(5, self.restartCount)?;
+        }
+        os.write_unknown_fields(self.get_unknown_fields())?;
+        ::std::result::Result::Ok(())
+    }
+
+    fn get_cached_size(&self) -> u32 {
+        self.cached_size.get()
+    }
+
+    fn get_unknown_fields(&self) -> &::protobuf::UnknownFields {
+        &self.unknown_fields
+    }
+
+    fn mut_unknown_fields(&mut self) -> &mut ::protobuf::UnknownFields {
+        &mut self.unknown_fields
+    }
+
+    fn as_any(&self) -> &dyn (::std::any::Any) {
+        self as &dyn (::std::any::Any)
+    }
+    fn as_any_mut(&mut self) -> &mut dyn (::std::any::Any) {
+        self as &mut dyn (::std::any::Any)
+    }
+    fn into_any(self: Box<Self>) -> ::std::boxed::Box<dyn (::std::any::Any)> {
+        self
+    }
+
+    fn descriptor(&self) -> &'static ::protobuf::reflect::MessageDescriptor {
+        Self::descriptor_static()
+    }
+
+    fn new() -> ProcessStarted {
+        ProcessStarted::new()
+    }
+
+    fn descriptor_static() -> &'static ::protobuf::reflect::MessageDescriptor {
+        static mut descriptor: ::protobuf::lazy::Lazy<::protobuf::reflect::MessageDescriptor> = ::protobuf::lazy::Lazy {
+            lock: ::protobuf::lazy::ONCE_INIT,
+            ptr: 0 as *const ::protobuf::reflect::MessageDescriptor,
+        };
+        unsafe {
+            descriptor.get(|| {
+                let mut fields = ::std::vec::Vec::new();
+                fields.push(::protobuf::reflect::accessor::make_singular_ptr_field_accessor::<_, ::protobuf::types::ProtobufTypeMessage<ProcessInfo>>(
+                    "info",
+                    |m: &ProcessStarted| { &m.info },
+                    |m: &mut ProcessStarted| { &mut m.info },
+                ));
+                fields.push(::protobuf::reflect::accessor::make_simple_field_accessor::<_, ::protobuf::types::ProtobufTypeEnum<ProcessTag>>(
+                    "tag",
+                    |m: &ProcessStarted| { &m.tag },
+                    |m: &mut ProcessStarted| { &mut m.tag },
+                ));
+                fields.push(::protobuf::reflect::accessor::make_singular_ptr_field_accessor::<_, ::protobuf::types::ProtobufTypeMessage<::protobuf::well_known_types::Timestamp>>(
+                    "createTimestamp",
+                    |m: &ProcessStarted| { &m.createTimestamp },
+                    |m: &mut ProcessStarted| { &mut m.createTimestamp },
+                ));
+                fields.push(::protobuf::reflect::accessor::make_simple_field_accessor::<_, ::protobuf::types::ProtobufTypeString>(
+                    "firstRestartTimestamp",
+                    |m: &ProcessStarted| { &m.firstRestartTimestamp },
+                    |m: &mut ProcessStarted| { &mut m.firstRestartTimestamp },
+                ));
+                fields.push(::protobuf::reflect::accessor::make_simple_field_accessor::<_, ::protobuf::types::ProtobufTypeUint32>(
+                    "restartCount",
+                    |m: &ProcessStarted| { &m.restartCount },
+                    |m: &mut ProcessStarted| { &mut m.restartCount },
+                ));
+                ::protobuf::reflect::MessageDescriptor::new::<ProcessStarted>(
+                    "ProcessStarted",
+                    fields,
+                    file_descriptor_proto()
+                )
+            })
+        }
+    }
+
+    fn default_instance() -> &'static ProcessStarted {
+        static mut instance: ::protobuf::lazy::Lazy<ProcessStarted> = ::protobuf::lazy::Lazy {
+            lock: ::protobuf::lazy::ONCE_INIT,
+            ptr: 0 as *const ProcessStarted,
+        };
+        unsafe {
+            instance.get(ProcessStarted::new)
+        }
+    }
+}
+
+impl ::protobuf::Clear for ProcessStarted {
+    fn clear(&mut self) {
+        self.info.clear();
+        self.tag = ProcessTag::WORKER;
+        self.createTimestamp.clear();
+        self.firstRestartTimestamp.clear();
+        self.restartCount = 0;
+        self.unknown_fields.clear();
+    }
+}
+
+impl ::std::fmt::Debug for ProcessStarted {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        ::protobuf::text_format::fmt(self, f)
+    }
+}
+
+impl ::protobuf::reflect::ProtobufValue for ProcessStarted {
+    fn as_ref(&self) -> ::protobuf::reflect::ProtobufValueRef {
+        ::protobuf::reflect::ProtobufValueRef::Message(self)
+    }
+}
+
+#[derive(PartialEq,Clone,Default)]
+pub struct ProcessTerminated {
+    // message fields
+    pub info: ::protobuf::SingularPtrField<ProcessInfo>,
+    pub tag: ProcessTag,
+    pub createTimestamp: ::protobuf::SingularPtrField<::protobuf::well_known_types::Timestamp>,
+    // special fields
+    pub unknown_fields: ::protobuf::UnknownFields,
+    pub cached_size: ::protobuf::CachedSize,
+}
+
+impl<'a> ::std::default::Default for &'a ProcessTerminated {
+    fn default() -> &'a ProcessTerminated {
+        <ProcessTerminated as ::protobuf::Message>::default_instance()
+    }
+}
+
+impl ProcessTerminated {
+    pub fn new() -> ProcessTerminated {
+        ::std::default::Default::default()
+    }
+
+    // .ProcessInfo info = 1;
+
+
+    pub fn get_info(&self) -> &ProcessInfo {
+        self.info.as_ref().unwrap_or_else(|| ProcessInfo::default_instance())
+    }
+    pub fn clear_info(&mut self) {
+        self.info.clear();
+    }
+
+    pub fn has_info(&self) -> bool {
+        self.info.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_info(&mut self, v: ProcessInfo) {
+        self.info = ::protobuf::SingularPtrField::some(v);
+    }
+
+    // Mutable pointer to the field.
+    // If field is not initialized, it is initialized with default value first.
+    pub fn mut_info(&mut self) -> &mut ProcessInfo {
+        if self.info.is_none() {
+            self.info.set_default();
+        }
+        self.info.as_mut().unwrap()
+    }
+
+    // Take field
+    pub fn take_info(&mut self) -> ProcessInfo {
+        self.info.take().unwrap_or_else(|| ProcessInfo::new())
+    }
+
+    // .ProcessTag tag = 2;
+
+
+    pub fn get_tag(&self) -> ProcessTag {
+        self.tag
+    }
+    pub fn clear_tag(&mut self) {
+        self.tag = ProcessTag::WORKER;
+    }
+
+    // Param is passed by value, moved
+    pub fn set_tag(&mut self, v: ProcessTag) {
+        self.tag = v;
+    }
+
+    // .google.protobuf.Timestamp createTimestamp = 3;
+
+
+    pub fn get_createTimestamp(&self) -> &::protobuf::well_known_types::Timestamp {
+        self.createTimestamp.as_ref().unwrap_or_else(|| ::protobuf::well_known_types::Timestamp::default_instance())
+    }
+    pub fn clear_createTimestamp(&mut self) {
+        self.createTimestamp.clear();
+    }
+
+    pub fn has_createTimestamp(&self) -> bool {
+        self.createTimestamp.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_createTimestamp(&mut self, v: ::protobuf::well_known_types::Timestamp) {
+        self.createTimestamp = ::protobuf::SingularPtrField::some(v);
+    }
+
+    // Mutable pointer to the field.
+    // If field is not initialized, it is initialized with default value first.
+    pub fn mut_createTimestamp(&mut self) -> &mut ::protobuf::well_known_types::Timestamp {
+        if self.createTimestamp.is_none() {
+            self.createTimestamp.set_default();
+        }
+        self.createTimestamp.as_mut().unwrap()
+    }
+
+    // Take field
+    pub fn take_createTimestamp(&mut self) -> ::protobuf::well_known_types::Timestamp {
+        self.createTimestamp.take().unwrap_or_else(|| ::protobuf::well_known_types::Timestamp::new())
+    }
+}
+
+impl ::protobuf::Message for ProcessTerminated {
+    fn is_initialized(&self) -> bool {
+        for v in &self.info {
+            if !v.is_initialized() {
+                return false;
+            }
+        };
+        for v in &self.createTimestamp {
+            if !v.is_initialized() {
+                return false;
+            }
+        };
+        true
+    }
+
+    fn merge_from(&mut self, is: &mut ::protobuf::CodedInputStream) -> ::protobuf::ProtobufResult<()> {
+        while !is.eof()? {
+            let (field_number, wire_type) = is.read_tag_unpack()?;
+            match field_number {
+                1 => {
+                    ::protobuf::rt::read_singular_message_into(wire_type, is, &mut self.info)?;
+                },
+                2 => {
+                    ::protobuf::rt::read_proto3_enum_with_unknown_fields_into(wire_type, is, &mut self.tag, 2, &mut self.unknown_fields)?
+                },
+                3 => {
+                    ::protobuf::rt::read_singular_message_into(wire_type, is, &mut self.createTimestamp)?;
+                },
+                _ => {
+                    ::protobuf::rt::read_unknown_or_skip_group(field_number, wire_type, is, self.mut_unknown_fields())?;
+                },
+            };
+        }
+        ::std::result::Result::Ok(())
+    }
+
+    // Compute sizes of nested messages
+    #[allow(unused_variables)]
+    fn compute_size(&self) -> u32 {
+        let mut my_size = 0;
+        if let Some(ref v) = self.info.as_ref() {
+            let len = v.compute_size();
+            my_size += 1 + ::protobuf::rt::compute_raw_varint32_size(len) + len;
+        }
+        if self.tag != ProcessTag::WORKER {
+            my_size += ::protobuf::rt::enum_size(2, self.tag);
+        }
+        if let Some(ref v) = self.createTimestamp.as_ref() {
+            let len = v.compute_size();
+            my_size += 1 + ::protobuf::rt::compute_raw_varint32_size(len) + len;
+        }
+        my_size += ::protobuf::rt::unknown_fields_size(self.get_unknown_fields());
+        self.cached_size.set(my_size);
+        my_size
+    }
+
+    fn write_to_with_cached_sizes(&self, os: &mut ::protobuf::CodedOutputStream) -> ::protobuf::ProtobufResult<()> {
+        if let Some(ref v) = self.info.as_ref() {
+            os.write_tag(1, ::protobuf::wire_format::WireTypeLengthDelimited)?;
+            os.write_raw_varint32(v.get_cached_size())?;
+            v.write_to_with_cached_sizes(os)?;
+        }
+        if self.tag != ProcessTag::WORKER {
+            os.write_enum(2, self.tag.value())?;
+        }
+        if let Some(ref v) = self.createTimestamp.as_ref() {
+            os.write_tag(3, ::protobuf::wire_format::WireTypeLengthDelimited)?;
+            os.write_raw_varint32(v.get_cached_size())?;
+            v.write_to_with_cached_sizes(os)?;
+        }
+        os.write_unknown_fields(self.get_unknown_fields())?;
+        ::std::result::Result::Ok(())
+    }
+
+    fn get_cached_size(&self) -> u32 {
+        self.cached_size.get()
+    }
+
+    fn get_unknown_fields(&self) -> &::protobuf::UnknownFields {
+        &self.unknown_fields
+    }
+
+    fn mut_unknown_fields(&mut self) -> &mut ::protobuf::UnknownFields {
+        &mut self.unknown_fields
+    }
+
+    fn as_any(&self) -> &dyn (::std::any::Any) {
+        self as &dyn (::std::any::Any)
+    }
+    fn as_any_mut(&mut self) -> &mut dyn (::std::any::Any) {
+        self as &mut dyn (::std::any::Any)
+    }
+    fn into_any(self: Box<Self>) -> ::std::boxed::Box<dyn (::std::any::Any)> {
+        self
+    }
+
+    fn descriptor(&self) -> &'static ::protobuf::reflect::MessageDescriptor {
+        Self::descriptor_static()
+    }
+
+    fn new() -> ProcessTerminated {
+        ProcessTerminated::new()
+    }
+
+    fn descriptor_static() -> &'static ::protobuf::reflect::MessageDescriptor {
+        static mut descriptor: ::protobuf::lazy::Lazy<::protobuf::reflect::MessageDescriptor> = ::protobuf::lazy::Lazy {
+            lock: ::protobuf::lazy::ONCE_INIT,
+            ptr: 0 as *const ::protobuf::reflect::MessageDescriptor,
+        };
+        unsafe {
+            descriptor.get(|| {
+                let mut fields = ::std::vec::Vec::new();
+                fields.push(::protobuf::reflect::accessor::make_singular_ptr_field_accessor::<_, ::protobuf::types::ProtobufTypeMessage<ProcessInfo>>(
+                    "info",
+                    |m: &ProcessTerminated| { &m.info },
+                    |m: &mut ProcessTerminated| { &mut m.info },
+                ));
+                fields.push(::protobuf::reflect::accessor::make_simple_field_accessor::<_, ::protobuf::types::ProtobufTypeEnum<ProcessTag>>(
+                    "tag",
+                    |m: &ProcessTerminated| { &m.tag },
+                    |m: &mut ProcessTerminated| { &mut m.tag },
+                ));
+                fields.push(::protobuf::reflect::accessor::make_singular_ptr_field_accessor::<_, ::protobuf::types::ProtobufTypeMessage<::protobuf::well_known_types::Timestamp>>(
+                    "createTimestamp",
+                    |m: &ProcessTerminated| { &m.createTimestamp },
+                    |m: &mut ProcessTerminated| { &mut m.createTimestamp },
+                ));
+                ::protobuf::reflect::MessageDescriptor::new::<ProcessTerminated>(
+                    "ProcessTerminated",
+                    fields,
+                    file_descriptor_proto()
+                )
+            })
+        }
+    }
+
+    fn default_instance() -> &'static ProcessTerminated {
+        static mut instance: ::protobuf::lazy::Lazy<ProcessTerminated> = ::protobuf::lazy::Lazy {
+            lock: ::protobuf::lazy::ONCE_INIT,
+            ptr: 0 as *const ProcessTerminated,
+        };
+        unsafe {
+            instance.get(ProcessTerminated::new)
+        }
+    }
+}
+
+impl ::protobuf::Clear for ProcessTerminated {
+    fn clear(&mut self) {
+        self.info.clear();
+        self.tag = ProcessTag::WORKER;
+        self.createTimestamp.clear();
+        self.unknown_fields.clear();
+    }
+}
+
+impl ::std::fmt::Debug for ProcessTerminated {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        ::protobuf::text_format::fmt(self, f)
+    }
+}
+
+impl ::protobuf::reflect::ProtobufValue for ProcessTerminated {
+    fn as_ref(&self) -> ::protobuf::reflect::ProtobufValueRef {
+        ::protobuf::reflect::ProtobufValueRef::Message(self)
+    }
+}
+
+#[derive(PartialEq,Clone,Default)]
+pub struct ProcessCompleted {
+    // message fields
+    pub info: ::protobuf::SingularPtrField<ProcessInfo>,
+    pub tag: ProcessTag,
+    pub createTimestamp: ::protobuf::SingularPtrField<::protobuf::well_known_types::Timestamp>,
+    // special fields
+    pub unknown_fields: ::protobuf::UnknownFields,
+    pub cached_size: ::protobuf::CachedSize,
+}
+
+impl<'a> ::std::default::Default for &'a ProcessCompleted {
+    fn default() -> &'a ProcessCompleted {
+        <ProcessCompleted as ::protobuf::Message>::default_instance()
+    }
+}
+
+impl ProcessCompleted {
+    pub fn new() -> ProcessCompleted {
+        ::std::default::Default::default()
+    }
+
+    // .ProcessInfo info = 1;
+
+
+    pub fn get_info(&self) -> &ProcessInfo {
+        self.info.as_ref().unwrap_or_else(|| ProcessInfo::default_instance())
+    }
+    pub fn clear_info(&mut self) {
+        self.info.clear();
+    }
+
+    pub fn has_info(&self) -> bool {
+        self.info.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_info(&mut self, v: ProcessInfo) {
+        self.info = ::protobuf::SingularPtrField::some(v);
+    }
+
+    // Mutable pointer to the field.
+    // If field is not initialized, it is initialized with default value first.
+    pub fn mut_info(&mut self) -> &mut ProcessInfo {
+        if self.info.is_none() {
+            self.info.set_default();
+        }
+        self.info.as_mut().unwrap()
+    }
+
+    // Take field
+    pub fn take_info(&mut self) -> ProcessInfo {
+        self.info.take().unwrap_or_else(|| ProcessInfo::new())
+    }
+
+    // .ProcessTag tag = 2;
+
+
+    pub fn get_tag(&self) -> ProcessTag {
+        self.tag
+    }
+    pub fn clear_tag(&mut self) {
+        self.tag = ProcessTag::WORKER;
+    }
+
+    // Param is passed by value, moved
+    pub fn set_tag(&mut self, v: ProcessTag) {
+        self.tag = v;
+    }
+
+    // .google.protobuf.Timestamp createTimestamp = 3;
+
+
+    pub fn get_createTimestamp(&self) -> &::protobuf::well_known_types::Timestamp {
+        self.createTimestamp.as_ref().unwrap_or_else(|| ::protobuf::well_known_types::Timestamp::default_instance())
+    }
+    pub fn clear_createTimestamp(&mut self) {
+        self.createTimestamp.clear();
+    }
+
+    pub fn has_createTimestamp(&self) -> bool {
+        self.createTimestamp.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_createTimestamp(&mut self, v: ::protobuf::well_known_types::Timestamp) {
+        self.createTimestamp = ::protobuf::SingularPtrField::some(v);
+    }
+
+    // Mutable pointer to the field.
+    // If field is not initialized, it is initialized with default value first.
+    pub fn mut_createTimestamp(&mut self) -> &mut ::protobuf::well_known_types::Timestamp {
+        if self.createTimestamp.is_none() {
+            self.createTimestamp.set_default();
+        }
+        self.createTimestamp.as_mut().unwrap()
+    }
+
+    // Take field
+    pub fn take_createTimestamp(&mut self) -> ::protobuf::well_known_types::Timestamp {
+        self.createTimestamp.take().unwrap_or_else(|| ::protobuf::well_known_types::Timestamp::new())
+    }
+}
+
+impl ::protobuf::Message for ProcessCompleted {
+    fn is_initialized(&self) -> bool {
+        for v in &self.info {
+            if !v.is_initialized() {
+                return false;
+            }
+        };
+        for v in &self.createTimestamp {
+            if !v.is_initialized() {
+                return false;
+            }
+        };
+        true
+    }
+
+    fn merge_from(&mut self, is: &mut ::protobuf::CodedInputStream) -> ::protobuf::ProtobufResult<()> {
+        while !is.eof()? {
+            let (field_number, wire_type) = is.read_tag_unpack()?;
+            match field_number {
+                1 => {
+                    ::protobuf::rt::read_singular_message_into(wire_type, is, &mut self.info)?;
+                },
+                2 => {
+                    ::protobuf::rt::read_proto3_enum_with_unknown_fields_into(wire_type, is, &mut self.tag, 2, &mut self.unknown_fields)?
+                },
+                3 => {
+                    ::protobuf::rt::read_singular_message_into(wire_type, is, &mut self.createTimestamp)?;
+                },
+                _ => {
+                    ::protobuf::rt::read_unknown_or_skip_group(field_number, wire_type, is, self.mut_unknown_fields())?;
+                },
+            };
+        }
+        ::std::result::Result::Ok(())
+    }
+
+    // Compute sizes of nested messages
+    #[allow(unused_variables)]
+    fn compute_size(&self) -> u32 {
+        let mut my_size = 0;
+        if let Some(ref v) = self.info.as_ref() {
+            let len = v.compute_size();
+            my_size += 1 + ::protobuf::rt::compute_raw_varint32_size(len) + len;
+        }
+        if self.tag != ProcessTag::WORKER {
+            my_size += ::protobuf::rt::enum_size(2, self.tag);
+        }
+        if let Some(ref v) = self.createTimestamp.as_ref() {
+            let len = v.compute_size();
+            my_size += 1 + ::protobuf::rt::compute_raw_varint32_size(len) + len;
+        }
+        my_size += ::protobuf::rt::unknown_fields_size(self.get_unknown_fields());
+        self.cached_size.set(my_size);
+        my_size
+    }
+
+    fn write_to_with_cached_sizes(&self, os: &mut ::protobuf::CodedOutputStream) -> ::protobuf::ProtobufResult<()> {
+        if let Some(ref v) = self.info.as_ref() {
+            os.write_tag(1, ::protobuf::wire_format::WireTypeLengthDelimited)?;
+            os.write_raw_varint32(v.get_cached_size())?;
+            v.write_to_with_cached_sizes(os)?;
+        }
+        if self.tag != ProcessTag::WORKER {
+            os.write_enum(2, self.tag.value())?;
+        }
+        if let Some(ref v) = self.createTimestamp.as_ref() {
+            os.write_tag(3, ::protobuf::wire_format::WireTypeLengthDelimited)?;
+            os.write_raw_varint32(v.get_cached_size())?;
+            v.write_to_with_cached_sizes(os)?;
+        }
+        os.write_unknown_fields(self.get_unknown_fields())?;
+        ::std::result::Result::Ok(())
+    }
+
+    fn get_cached_size(&self) -> u32 {
+        self.cached_size.get()
+    }
+
+    fn get_unknown_fields(&self) -> &::protobuf::UnknownFields {
+        &self.unknown_fields
+    }
+
+    fn mut_unknown_fields(&mut self) -> &mut ::protobuf::UnknownFields {
+        &mut self.unknown_fields
+    }
+
+    fn as_any(&self) -> &dyn (::std::any::Any) {
+        self as &dyn (::std::any::Any)
+    }
+    fn as_any_mut(&mut self) -> &mut dyn (::std::any::Any) {
+        self as &mut dyn (::std::any::Any)
+    }
+    fn into_any(self: Box<Self>) -> ::std::boxed::Box<dyn (::std::any::Any)> {
+        self
+    }
+
+    fn descriptor(&self) -> &'static ::protobuf::reflect::MessageDescriptor {
+        Self::descriptor_static()
+    }
+
+    fn new() -> ProcessCompleted {
+        ProcessCompleted::new()
+    }
+
+    fn descriptor_static() -> &'static ::protobuf::reflect::MessageDescriptor {
+        static mut descriptor: ::protobuf::lazy::Lazy<::protobuf::reflect::MessageDescriptor> = ::protobuf::lazy::Lazy {
+            lock: ::protobuf::lazy::ONCE_INIT,
+            ptr: 0 as *const ::protobuf::reflect::MessageDescriptor,
+        };
+        unsafe {
+            descriptor.get(|| {
+                let mut fields = ::std::vec::Vec::new();
+                fields.push(::protobuf::reflect::accessor::make_singular_ptr_field_accessor::<_, ::protobuf::types::ProtobufTypeMessage<ProcessInfo>>(
+                    "info",
+                    |m: &ProcessCompleted| { &m.info },
+                    |m: &mut ProcessCompleted| { &mut m.info },
+                ));
+                fields.push(::protobuf::reflect::accessor::make_simple_field_accessor::<_, ::protobuf::types::ProtobufTypeEnum<ProcessTag>>(
+                    "tag",
+                    |m: &ProcessCompleted| { &m.tag },
+                    |m: &mut ProcessCompleted| { &mut m.tag },
+                ));
+                fields.push(::protobuf::reflect::accessor::make_singular_ptr_field_accessor::<_, ::protobuf::types::ProtobufTypeMessage<::protobuf::well_known_types::Timestamp>>(
+                    "createTimestamp",
+                    |m: &ProcessCompleted| { &m.createTimestamp },
+                    |m: &mut ProcessCompleted| { &mut m.createTimestamp },
+                ));
+                ::protobuf::reflect::MessageDescriptor::new::<ProcessCompleted>(
+                    "ProcessCompleted",
+                    fields,
+                    file_descriptor_proto()
+                )
+            })
+        }
+    }
+
+    fn default_instance() -> &'static ProcessCompleted {
+        static mut instance: ::protobuf::lazy::Lazy<ProcessCompleted> = ::protobuf::lazy::Lazy {
+            lock: ::protobuf::lazy::ONCE_INIT,
+            ptr: 0 as *const ProcessCompleted,
+        };
+        unsafe {
+            instance.get(ProcessCompleted::new)
+        }
+    }
+}
+
+impl ::protobuf::Clear for ProcessCompleted {
+    fn clear(&mut self) {
+        self.info.clear();
+        self.tag = ProcessTag::WORKER;
+        self.createTimestamp.clear();
+        self.unknown_fields.clear();
+    }
+}
+
+impl ::std::fmt::Debug for ProcessCompleted {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        ::protobuf::text_format::fmt(self, f)
+    }
+}
+
+impl ::protobuf::reflect::ProtobufValue for ProcessCompleted {
+    fn as_ref(&self) -> ::protobuf::reflect::ProtobufValueRef {
+        ::protobuf::reflect::ProtobufValueRef::Message(self)
+    }
+}
+
+#[derive(PartialEq,Clone,Default)]
+pub struct ProcessFailed {
+    // message fields
+    pub info: ::protobuf::SingularPtrField<ProcessInfo>,
+    pub tag: ProcessTag,
+    pub error: ::std::string::String,
+    pub createTimestamp: ::protobuf::SingularPtrField<::protobuf::well_known_types::Timestamp>,
+    // special fields
+    pub unknown_fields: ::protobuf::UnknownFields,
+    pub cached_size: ::protobuf::CachedSize,
+}
+
+impl<'a> ::std::default::Default for &'a ProcessFailed {
+    fn default() -> &'a ProcessFailed {
+        <ProcessFailed as ::protobuf::Message>::default_instance()
+    }
+}
+
+impl ProcessFailed {
+    pub fn new() -> ProcessFailed {
+        ::std::default::Default::default()
+    }
+
+    // .ProcessInfo info = 1;
+
+
+    pub fn get_info(&self) -> &ProcessInfo {
+        self.info.as_ref().unwrap_or_else(|| ProcessInfo::default_instance())
+    }
+    pub fn clear_info(&mut self) {
+        self.info.clear();
+    }
+
+    pub fn has_info(&self) -> bool {
+        self.info.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_info(&mut self, v: ProcessInfo) {
+        self.info = ::protobuf::SingularPtrField::some(v);
+    }
+
+    // Mutable pointer to the field.
+    // If field is not initialized, it is initialized with default value first.
+    pub fn mut_info(&mut self) -> &mut ProcessInfo {
+        if self.info.is_none() {
+            self.info.set_default();
+        }
+        self.info.as_mut().unwrap()
+    }
+
+    // Take field
+    pub fn take_info(&mut self) -> ProcessInfo {
+        self.info.take().unwrap_or_else(|| ProcessInfo::new())
+    }
+
+    // .ProcessTag tag = 2;
+
+
+    pub fn get_tag(&self) -> ProcessTag {
+        self.tag
+    }
+    pub fn clear_tag(&mut self) {
+        self.tag = ProcessTag::WORKER;
+    }
+
+    // Param is passed by value, moved
+    pub fn set_tag(&mut self, v: ProcessTag) {
+        self.tag = v;
+    }
+
+    // string error = 3;
+
+
+    pub fn get_error(&self) -> &str {
+        &self.error
+    }
+    pub fn clear_error(&mut self) {
+        self.error.clear();
+    }
+
+    // Param is passed by value, moved
+    pub fn set_error(&mut self, v: ::std::string::String) {
+        self.error = v;
+    }
+
+    // Mutable pointer to the field.
+    // If field is not initialized, it is initialized with default value first.
+    pub fn mut_error(&mut self) -> &mut ::std::string::String {
+        &mut self.error
+    }
+
+    // Take field
+    pub fn take_error(&mut self) -> ::std::string::String {
+        ::std::mem::replace(&mut self.error, ::std::string::String::new())
+    }
+
+    // .google.protobuf.Timestamp createTimestamp = 4;
+
+
+    pub fn get_createTimestamp(&self) -> &::protobuf::well_known_types::Timestamp {
+        self.createTimestamp.as_ref().unwrap_or_else(|| ::protobuf::well_known_types::Timestamp::default_instance())
+    }
+    pub fn clear_createTimestamp(&mut self) {
+        self.createTimestamp.clear();
+    }
+
+    pub fn has_createTimestamp(&self) -> bool {
+        self.createTimestamp.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_createTimestamp(&mut self, v: ::protobuf::well_known_types::Timestamp) {
+        self.createTimestamp = ::protobuf::SingularPtrField::some(v);
+    }
+
+    // Mutable pointer to the field.
+    // If field is not initialized, it is initialized with default value first.
+    pub fn mut_createTimestamp(&mut self) -> &mut ::protobuf::well_known_types::Timestamp {
+        if self.createTimestamp.is_none() {
+            self.createTimestamp.set_default();
+        }
+        self.createTimestamp.as_mut().unwrap()
+    }
+
+    // Take field
+    pub fn take_createTimestamp(&mut self) -> ::protobuf::well_known_types::Timestamp {
+        self.createTimestamp.take().unwrap_or_else(|| ::protobuf::well_known_types::Timestamp::new())
+    }
+}
+
+impl ::protobuf::Message for ProcessFailed {
+    fn is_initialized(&self) -> bool {
+        for v in &self.info {
+            if !v.is_initialized() {
+                return false;
+            }
+        };
+        for v in &self.createTimestamp {
+            if !v.is_initialized() {
+                return false;
+            }
+        };
+        true
+    }
+
+    fn merge_from(&mut self, is: &mut ::protobuf::CodedInputStream) -> ::protobuf::ProtobufResult<()> {
+        while !is.eof()? {
+            let (field_number, wire_type) = is.read_tag_unpack()?;
+            match field_number {
+                1 => {
+                    ::protobuf::rt::read_singular_message_into(wire_type, is, &mut self.info)?;
+                },
+                2 => {
+                    ::protobuf::rt::read_proto3_enum_with_unknown_fields_into(wire_type, is, &mut self.tag, 2, &mut self.unknown_fields)?
+                },
+                3 => {
+                    ::protobuf::rt::read_singular_proto3_string_into(wire_type, is, &mut self.error)?;
+                },
+                4 => {
+                    ::protobuf::rt::read_singular_message_into(wire_type, is, &mut self.createTimestamp)?;
+                },
+                _ => {
+                    ::protobuf::rt::read_unknown_or_skip_group(field_number, wire_type, is, self.mut_unknown_fields())?;
+                },
+            };
+        }
+        ::std::result::Result::Ok(())
+    }
+
+    // Compute sizes of nested messages
+    #[allow(unused_variables)]
+    fn compute_size(&self) -> u32 {
+        let mut my_size = 0;
+        if let Some(ref v) = self.info.as_ref() {
+            let len = v.compute_size();
+            my_size += 1 + ::protobuf::rt::compute_raw_varint32_size(len) + len;
+        }
+        if self.tag != ProcessTag::WORKER {
+            my_size += ::protobuf::rt::enum_size(2, self.tag);
+        }
+        if !self.error.is_empty() {
+            my_size += ::protobuf::rt::string_size(3, &self.error);
+        }
+        if let Some(ref v) = self.createTimestamp.as_ref() {
+            let len = v.compute_size();
+            my_size += 1 + ::protobuf::rt::compute_raw_varint32_size(len) + len;
+        }
+        my_size += ::protobuf::rt::unknown_fields_size(self.get_unknown_fields());
+        self.cached_size.set(my_size);
+        my_size
+    }
+
+    fn write_to_with_cached_sizes(&self, os: &mut ::protobuf::CodedOutputStream) -> ::protobuf::ProtobufResult<()> {
+        if let Some(ref v) = self.info.as_ref() {
+            os.write_tag(1, ::protobuf::wire_format::WireTypeLengthDelimited)?;
+            os.write_raw_varint32(v.get_cached_size())?;
+            v.write_to_with_cached_sizes(os)?;
+        }
+        if self.tag != ProcessTag::WORKER {
+            os.write_enum(2, self.tag.value())?;
+        }
+        if !self.error.is_empty() {
+            os.write_string(3, &self.error)?;
+        }
+        if let Some(ref v) = self.createTimestamp.as_ref() {
+            os.write_tag(4, ::protobuf::wire_format::WireTypeLengthDelimited)?;
+            os.write_raw_varint32(v.get_cached_size())?;
+            v.write_to_with_cached_sizes(os)?;
+        }
+        os.write_unknown_fields(self.get_unknown_fields())?;
+        ::std::result::Result::Ok(())
+    }
+
+    fn get_cached_size(&self) -> u32 {
+        self.cached_size.get()
+    }
+
+    fn get_unknown_fields(&self) -> &::protobuf::UnknownFields {
+        &self.unknown_fields
+    }
+
+    fn mut_unknown_fields(&mut self) -> &mut ::protobuf::UnknownFields {
+        &mut self.unknown_fields
+    }
+
+    fn as_any(&self) -> &dyn (::std::any::Any) {
+        self as &dyn (::std::any::Any)
+    }
+    fn as_any_mut(&mut self) -> &mut dyn (::std::any::Any) {
+        self as &mut dyn (::std::any::Any)
+    }
+    fn into_any(self: Box<Self>) -> ::std::boxed::Box<dyn (::std::any::Any)> {
+        self
+    }
+
+    fn descriptor(&self) -> &'static ::protobuf::reflect::MessageDescriptor {
+        Self::descriptor_static()
+    }
+
+    fn new() -> ProcessFailed {
+        ProcessFailed::new()
+    }
+
+    fn descriptor_static() -> &'static ::protobuf::reflect::MessageDescriptor {
+        static mut descriptor: ::protobuf::lazy::Lazy<::protobuf::reflect::MessageDescriptor> = ::protobuf::lazy::Lazy {
+            lock: ::protobuf::lazy::ONCE_INIT,
+            ptr: 0 as *const ::protobuf::reflect::MessageDescriptor,
+        };
+        unsafe {
+            descriptor.get(|| {
+                let mut fields = ::std::vec::Vec::new();
+                fields.push(::protobuf::reflect::accessor::make_singular_ptr_field_accessor::<_, ::protobuf::types::ProtobufTypeMessage<ProcessInfo>>(
+                    "info",
+                    |m: &ProcessFailed| { &m.info },
+                    |m: &mut ProcessFailed| { &mut m.info },
+                ));
+                fields.push(::protobuf::reflect::accessor::make_simple_field_accessor::<_, ::protobuf::types::ProtobufTypeEnum<ProcessTag>>(
+                    "tag",
+                    |m: &ProcessFailed| { &m.tag },
+                    |m: &mut ProcessFailed| { &mut m.tag },
+                ));
+                fields.push(::protobuf::reflect::accessor::make_simple_field_accessor::<_, ::protobuf::types::ProtobufTypeString>(
+                    "error",
+                    |m: &ProcessFailed| { &m.error },
+                    |m: &mut ProcessFailed| { &mut m.error },
+                ));
+                fields.push(::protobuf::reflect::accessor::make_singular_ptr_field_accessor::<_, ::protobuf::types::ProtobufTypeMessage<::protobuf::well_known_types::Timestamp>>(
+                    "createTimestamp",
+                    |m: &ProcessFailed| { &m.createTimestamp },
+                    |m: &mut ProcessFailed| { &mut m.createTimestamp },
+                ));
+                ::protobuf::reflect::MessageDescriptor::new::<ProcessFailed>(
+                    "ProcessFailed",
+                    fields,
+                    file_descriptor_proto()
+                )
+            })
+        }
+    }
+
+    fn default_instance() -> &'static ProcessFailed {
+        static mut instance: ::protobuf::lazy::Lazy<ProcessFailed> = ::protobuf::lazy::Lazy {
+            lock: ::protobuf::lazy::ONCE_INIT,
+            ptr: 0 as *const ProcessFailed,
+        };
+        unsafe {
+            instance.get(ProcessFailed::new)
+        }
+    }
+}
+
+impl ::protobuf::Clear for ProcessFailed {
+    fn clear(&mut self) {
+        self.info.clear();
+        self.tag = ProcessTag::WORKER;
+        self.error.clear();
+        self.createTimestamp.clear();
+        self.unknown_fields.clear();
+    }
+}
+
+impl ::std::fmt::Debug for ProcessFailed {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        ::protobuf::text_format::fmt(self, f)
+    }
+}
+
+impl ::protobuf::reflect::ProtobufValue for ProcessFailed {
+    fn as_ref(&self) -> ::protobuf::reflect::ProtobufValueRef {
+        ::protobuf::reflect::ProtobufValueRef::Message(self)
+    }
+}
+
+#[derive(PartialEq,Clone,Default)]
+pub struct ProcessEvent {
+    // message oneof groups
+    pub payload: ::std::option::Option<ProcessEvent_oneof_payload>,
+    // special fields
+    pub unknown_fields: ::protobuf::UnknownFields,
+    pub cached_size: ::protobuf::CachedSize,
+}
+
+impl<'a> ::std::default::Default for &'a ProcessEvent {
+    fn default() -> &'a ProcessEvent {
+        <ProcessEvent as ::protobuf::Message>::default_instance()
+    }
+}
+
+#[derive(Clone,PartialEq,Debug)]
+pub enum ProcessEvent_oneof_payload {
+    processStarted(ProcessStarted),
+    processTerminated(ProcessTerminated),
+    processCompleted(ProcessCompleted),
+    processFailed(ProcessFailed),
+}
+
+impl ProcessEvent {
+    pub fn new() -> ProcessEvent {
+        ::std::default::Default::default()
+    }
+
+    // .ProcessStarted processStarted = 1;
+
+
+    pub fn get_processStarted(&self) -> &ProcessStarted {
+        match self.payload {
+            ::std::option::Option::Some(ProcessEvent_oneof_payload::processStarted(ref v)) => v,
+            _ => ProcessStarted::default_instance(),
+        }
+    }
+    pub fn clear_processStarted(&mut self) {
+        self.payload = ::std::option::Option::None;
+    }
+
+    pub fn has_processStarted(&self) -> bool {
+        match self.payload {
+            ::std::option::Option::Some(ProcessEvent_oneof_payload::processStarted(..)) => true,
+            _ => false,
+        }
+    }
+
+    // Param is passed by value, moved
+    pub fn set_processStarted(&mut self, v: ProcessStarted) {
+        self.payload = ::std::option::Option::Some(ProcessEvent_oneof_payload::processStarted(v))
+    }
+
+    // Mutable pointer to the field.
+    pub fn mut_processStarted(&mut self) -> &mut ProcessStarted {
+        if let ::std::option::Option::Some(ProcessEvent_oneof_payload::processStarted(_)) = self.payload {
+        } else {
+            self.payload = ::std::option::Option::Some(ProcessEvent_oneof_payload::processStarted(ProcessStarted::new()));
+        }
+        match self.payload {
+            ::std::option::Option::Some(ProcessEvent_oneof_payload::processStarted(ref mut v)) => v,
+            _ => panic!(),
+        }
+    }
+
+    // Take field
+    pub fn take_processStarted(&mut self) -> ProcessStarted {
+        if self.has_processStarted() {
+            match self.payload.take() {
+                ::std::option::Option::Some(ProcessEvent_oneof_payload::processStarted(v)) => v,
+                _ => panic!(),
+            }
+        } else {
+            ProcessStarted::new()
+        }
+    }
+
+    // .ProcessTerminated processTerminated = 2;
+
+
+    pub fn get_processTerminated(&self) -> &ProcessTerminated {
+        match self.payload {
+            ::std::option::Option::Some(ProcessEvent_oneof_payload::processTerminated(ref v)) => v,
+            _ => ProcessTerminated::default_instance(),
+        }
+    }
+    pub fn clear_processTerminated(&mut self) {
+        self.payload = ::std::option::Option::None;
+    }
+
+    pub fn has_processTerminated(&self) -> bool {
+        match self.payload {
+            ::std::option::Option::Some(ProcessEvent_oneof_payload::processTerminated(..)) => true,
+            _ => false,
+        }
+    }
+
+    // Param is passed by value, moved
+    pub fn set_processTerminated(&mut self, v: ProcessTerminated) {
+        self.payload = ::std::option::Option::Some(ProcessEvent_oneof_payload::processTerminated(v))
+    }
+
+    // Mutable pointer to the field.
+    pub fn mut_processTerminated(&mut self) -> &mut ProcessTerminated {
+        if let ::std::option::Option::Some(ProcessEvent_oneof_payload::processTerminated(_)) = self.payload {
+        } else {
+            self.payload = ::std::option::Option::Some(ProcessEvent_oneof_payload::processTerminated(ProcessTerminated::new()));
+        }
+        match self.payload {
+            ::std::option::Option::Some(ProcessEvent_oneof_payload::processTerminated(ref mut v)) => v,
+            _ => panic!(),
+        }
+    }
+
+    // Take field
+    pub fn take_processTerminated(&mut self) -> ProcessTerminated {
+        if self.has_processTerminated() {
+            match self.payload.take() {
+                ::std::option::Option::Some(ProcessEvent_oneof_payload::processTerminated(v)) => v,
+                _ => panic!(),
+            }
+        } else {
+            ProcessTerminated::new()
+        }
+    }
+
+    // .ProcessCompleted processCompleted = 3;
+
+
+    pub fn get_processCompleted(&self) -> &ProcessCompleted {
+        match self.payload {
+            ::std::option::Option::Some(ProcessEvent_oneof_payload::processCompleted(ref v)) => v,
+            _ => ProcessCompleted::default_instance(),
+        }
+    }
+    pub fn clear_processCompleted(&mut self) {
+        self.payload = ::std::option::Option::None;
+    }
+
+    pub fn has_processCompleted(&self) -> bool {
+        match self.payload {
+            ::std::option::Option::Some(ProcessEvent_oneof_payload::processCompleted(..)) => true,
+            _ => false,
+        }
+    }
+
+    // Param is passed by value, moved
+    pub fn set_processCompleted(&mut self, v: ProcessCompleted) {
+        self.payload = ::std::option::Option::Some(ProcessEvent_oneof_payload::processCompleted(v))
+    }
+
+    // Mutable pointer to the field.
+    pub fn mut_processCompleted(&mut self) -> &mut ProcessCompleted {
+        if let ::std::option::Option::Some(ProcessEvent_oneof_payload::processCompleted(_)) = self.payload {
+        } else {
+            self.payload = ::std::option::Option::Some(ProcessEvent_oneof_payload::processCompleted(ProcessCompleted::new()));
+        }
+        match self.payload {
+            ::std::option::Option::Some(ProcessEvent_oneof_payload::processCompleted(ref mut v)) => v,
+            _ => panic!(),
+        }
+    }
+
+    // Take field
+    pub fn take_processCompleted(&mut self) -> ProcessCompleted {
+        if self.has_processCompleted() {
+            match self.payload.take() {
+                ::std::option::Option::Some(ProcessEvent_oneof_payload::processCompleted(v)) => v,
+                _ => panic!(),
+            }
+        } else {
+            ProcessCompleted::new()
+        }
+    }
+
+    // .ProcessFailed processFailed = 4;
+
+
+    pub fn get_processFailed(&self) -> &ProcessFailed {
+        match self.payload {
+            ::std::option::Option::Some(ProcessEvent_oneof_payload::processFailed(ref v)) => v,
+            _ => ProcessFailed::default_instance(),
+        }
+    }
+    pub fn clear_processFailed(&mut self) {
+        self.payload = ::std::option::Option::None;
+    }
+
+    pub fn has_processFailed(&self) -> bool {
+        match self.payload {
+            ::std::option::Option::Some(ProcessEvent_oneof_payload::processFailed(..)) => true,
+            _ => false,
+        }
+    }
+
+    // Param is passed by value, moved
+    pub fn set_processFailed(&mut self, v: ProcessFailed) {
+        self.payload = ::std::option::Option::Some(ProcessEvent_oneof_payload::processFailed(v))
+    }
+
+    // Mutable pointer to the field.
+    pub fn mut_processFailed(&mut self) -> &mut ProcessFailed {
+        if let ::std::option::Option::Some(ProcessEvent_oneof_payload::processFailed(_)) = self.payload {
+        } else {
+            self.payload = ::std::option::Option::Some(ProcessEvent_oneof_payload::processFailed(ProcessFailed::new()));
+        }
+        match self.payload {
+            ::std::option::Option::Some(ProcessEvent_oneof_payload::processFailed(ref mut v)) => v,
+            _ => panic!(),
+        }
+    }
+
+    // Take field
+    pub fn take_processFailed(&mut self) -> ProcessFailed {
+        if self.has_processFailed() {
+            match self.payload.take() {
+                ::std::option::Option::Some(ProcessEvent_oneof_payload::processFailed(v)) => v,
+                _ => panic!(),
+            }
+        } else {
+            ProcessFailed::new()
+        }
+    }
+}
+
+impl ::protobuf::Message for ProcessEvent {
+    fn is_initialized(&self) -> bool {
+        if let Some(ProcessEvent_oneof_payload::processStarted(ref v)) = self.payload {
+            if !v.is_initialized() {
+                return false;
+            }
+        }
+        if let Some(ProcessEvent_oneof_payload::processTerminated(ref v)) = self.payload {
+            if !v.is_initialized() {
+                return false;
+            }
+        }
+        if let Some(ProcessEvent_oneof_payload::processCompleted(ref v)) = self.payload {
+            if !v.is_initialized() {
+                return false;
+            }
+        }
+        if let Some(ProcessEvent_oneof_payload::processFailed(ref v)) = self.payload {
+            if !v.is_initialized() {
+                return false;
+            }
+        }
+        true
+    }
+
+    fn merge_from(&mut self, is: &mut ::protobuf::CodedInputStream) -> ::protobuf::ProtobufResult<()> {
+        while !is.eof()? {
+            let (field_number, wire_type) = is.read_tag_unpack()?;
+            match field_number {
+                1 => {
+                    if wire_type != ::protobuf::wire_format::WireTypeLengthDelimited {
+                        return ::std::result::Result::Err(::protobuf::rt::unexpected_wire_type(wire_type));
+                    }
+                    self.payload = ::std::option::Option::Some(ProcessEvent_oneof_payload::processStarted(is.read_message()?));
+                },
+                2 => {
+                    if wire_type != ::protobuf::wire_format::WireTypeLengthDelimited {
+                        return ::std::result::Result::Err(::protobuf::rt::unexpected_wire_type(wire_type));
+                    }
+                    self.payload = ::std::option::Option::Some(ProcessEvent_oneof_payload::processTerminated(is.read_message()?));
+                },
+                3 => {
+                    if wire_type != ::protobuf::wire_format::WireTypeLengthDelimited {
+                        return ::std::result::Result::Err(::protobuf::rt::unexpected_wire_type(wire_type));
+                    }
+                    self.payload = ::std::option::Option::Some(ProcessEvent_oneof_payload::processCompleted(is.read_message()?));
+                },
+                4 => {
+                    if wire_type != ::protobuf::wire_format::WireTypeLengthDelimited {
+                        return ::std::result::Result::Err(::protobuf::rt::unexpected_wire_type(wire_type));
+                    }
+                    self.payload = ::std::option::Option::Some(ProcessEvent_oneof_payload::processFailed(is.read_message()?));
+                },
+                _ => {
+                    ::protobuf::rt::read_unknown_or_skip_group(field_number, wire_type, is, self.mut_unknown_fields())?;
+                },
+            };
+        }
+        ::std::result::Result::Ok(())
+    }
+
+    // Compute sizes of nested messages
+    #[allow(unused_variables)]
+    fn compute_size(&self) -> u32 {
+        let mut my_size = 0;
+        if let ::std::option::Option::Some(ref v) = self.payload {
+            match v {
+                &ProcessEvent_oneof_payload::processStarted(ref v) => {
+                    let len = v.compute_size();
+                    my_size += 1 + ::protobuf::rt::compute_raw_varint32_size(len) + len;
+                },
+                &ProcessEvent_oneof_payload::processTerminated(ref v) => {
+                    let len = v.compute_size();
+                    my_size += 1 + ::protobuf::rt::compute_raw_varint32_size(len) + len;
+                },
+                &ProcessEvent_oneof_payload::processCompleted(ref v) => {
+                    let len = v.compute_size();
+                    my_size += 1 + ::protobuf::rt::compute_raw_varint32_size(len) + len;
+                },
+                &ProcessEvent_oneof_payload::processFailed(ref v) => {
+                    let len = v.compute_size();
+                    my_size += 1 + ::protobuf::rt::compute_raw_varint32_size(len) + len;
+                },
+            };
+        }
+        my_size += ::protobuf::rt::unknown_fields_size(self.get_unknown_fields());
+        self.cached_size.set(my_size);
+        my_size
+    }
+
+    fn write_to_with_cached_sizes(&self, os: &mut ::protobuf::CodedOutputStream) -> ::protobuf::ProtobufResult<()> {
+        if let ::std::option::Option::Some(ref v) = self.payload {
+            match v {
+                &ProcessEvent_oneof_payload::processStarted(ref v) => {
+                    os.write_tag(1, ::protobuf::wire_format::WireTypeLengthDelimited)?;
+                    os.write_raw_varint32(v.get_cached_size())?;
+                    v.write_to_with_cached_sizes(os)?;
+                },
+                &ProcessEvent_oneof_payload::processTerminated(ref v) => {
+                    os.write_tag(2, ::protobuf::wire_format::WireTypeLengthDelimited)?;
+                    os.write_raw_varint32(v.get_cached_size())?;
+                    v.write_to_with_cached_sizes(os)?;
+                },
+                &ProcessEvent_oneof_payload::processCompleted(ref v) => {
+                    os.write_tag(3, ::protobuf::wire_format::WireTypeLengthDelimited)?;
+                    os.write_raw_varint32(v.get_cached_size())?;
+                    v.write_to_with_cached_sizes(os)?;
+                },
+                &ProcessEvent_oneof_payload::processFailed(ref v) => {
+                    os.write_tag(4, ::protobuf::wire_format::WireTypeLengthDelimited)?;
+                    os.write_raw_varint32(v.get_cached_size())?;
+                    v.write_to_with_cached_sizes(os)?;
+                },
+            };
+        }
+        os.write_unknown_fields(self.get_unknown_fields())?;
+        ::std::result::Result::Ok(())
+    }
+
+    fn get_cached_size(&self) -> u32 {
+        self.cached_size.get()
+    }
+
+    fn get_unknown_fields(&self) -> &::protobuf::UnknownFields {
+        &self.unknown_fields
+    }
+
+    fn mut_unknown_fields(&mut self) -> &mut ::protobuf::UnknownFields {
+        &mut self.unknown_fields
+    }
+
+    fn as_any(&self) -> &dyn (::std::any::Any) {
+        self as &dyn (::std::any::Any)
+    }
+    fn as_any_mut(&mut self) -> &mut dyn (::std::any::Any) {
+        self as &mut dyn (::std::any::Any)
+    }
+    fn into_any(self: Box<Self>) -> ::std::boxed::Box<dyn (::std::any::Any)> {
+        self
+    }
+
+    fn descriptor(&self) -> &'static ::protobuf::reflect::MessageDescriptor {
+        Self::descriptor_static()
+    }
+
+    fn new() -> ProcessEvent {
+        ProcessEvent::new()
+    }
+
+    fn descriptor_static() -> &'static ::protobuf::reflect::MessageDescriptor {
+        static mut descriptor: ::protobuf::lazy::Lazy<::protobuf::reflect::MessageDescriptor> = ::protobuf::lazy::Lazy {
+            lock: ::protobuf::lazy::ONCE_INIT,
+            ptr: 0 as *const ::protobuf::reflect::MessageDescriptor,
+        };
+        unsafe {
+            descriptor.get(|| {
+                let mut fields = ::std::vec::Vec::new();
+                fields.push(::protobuf::reflect::accessor::make_singular_message_accessor::<_, ProcessStarted>(
+                    "processStarted",
+                    ProcessEvent::has_processStarted,
+                    ProcessEvent::get_processStarted,
+                ));
+                fields.push(::protobuf::reflect::accessor::make_singular_message_accessor::<_, ProcessTerminated>(
+                    "processTerminated",
+                    ProcessEvent::has_processTerminated,
+                    ProcessEvent::get_processTerminated,
+                ));
+                fields.push(::protobuf::reflect::accessor::make_singular_message_accessor::<_, ProcessCompleted>(
+                    "processCompleted",
+                    ProcessEvent::has_processCompleted,
+                    ProcessEvent::get_processCompleted,
+                ));
+                fields.push(::protobuf::reflect::accessor::make_singular_message_accessor::<_, ProcessFailed>(
+                    "processFailed",
+                    ProcessEvent::has_processFailed,
+                    ProcessEvent::get_processFailed,
+                ));
+                ::protobuf::reflect::MessageDescriptor::new::<ProcessEvent>(
+                    "ProcessEvent",
+                    fields,
+                    file_descriptor_proto()
+                )
+            })
+        }
+    }
+
+    fn default_instance() -> &'static ProcessEvent {
+        static mut instance: ::protobuf::lazy::Lazy<ProcessEvent> = ::protobuf::lazy::Lazy {
+            lock: ::protobuf::lazy::ONCE_INIT,
+            ptr: 0 as *const ProcessEvent,
+        };
+        unsafe {
+            instance.get(ProcessEvent::new)
+        }
+    }
+}
+
+impl ::protobuf::Clear for ProcessEvent {
+    fn clear(&mut self) {
+        self.payload = ::std::option::Option::None;
+        self.payload = ::std::option::Option::None;
+        self.payload = ::std::option::Option::None;
+        self.payload = ::std::option::Option::None;
+        self.unknown_fields.clear();
+    }
+}
+
+impl ::std::fmt::Debug for ProcessEvent {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        ::protobuf::text_format::fmt(self, f)
+    }
+}
+
+impl ::protobuf::reflect::ProtobufValue for ProcessEvent {
+    fn as_ref(&self) -> ::protobuf::reflect::ProtobufValueRef {
+        ::protobuf::reflect::ProtobufValueRef::Message(self)
+    }
+}
+
+#[derive(Clone,PartialEq,Eq,Debug,Hash)]
+pub enum ProcessTag {
+    WORKER = 0,
+    SUPERVISOR = 1,
+}
+
+impl ::protobuf::ProtobufEnum for ProcessTag {
+    fn value(&self) -> i32 {
+        *self as i32
+    }
+
+    fn from_i32(value: i32) -> ::std::option::Option<ProcessTag> {
+        match value {
+            0 => ::std::option::Option::Some(ProcessTag::WORKER),
+            1 => ::std::option::Option::Some(ProcessTag::SUPERVISOR),
+            _ => ::std::option::Option::None
+        }
+    }
+
+    fn values() -> &'static [Self] {
+        static values: &'static [ProcessTag] = &[
+            ProcessTag::WORKER,
+            ProcessTag::SUPERVISOR,
+        ];
+        values
+    }
+
+    fn enum_descriptor_static() -> &'static ::protobuf::reflect::EnumDescriptor {
+        static mut descriptor: ::protobuf::lazy::Lazy<::protobuf::reflect::EnumDescriptor> = ::protobuf::lazy::Lazy {
+            lock: ::protobuf::lazy::ONCE_INIT,
+            ptr: 0 as *const ::protobuf::reflect::EnumDescriptor,
+        };
+        unsafe {
+            descriptor.get(|| {
+                ::protobuf::reflect::EnumDescriptor::new("ProcessTag", file_descriptor_proto())
+            })
+        }
+    }
+}
+
+impl ::std::marker::Copy for ProcessTag {
+}
+
+impl ::std::default::Default for ProcessTag {
+    fn default() -> Self {
+        ProcessTag::WORKER
+    }
+}
+
+impl ::protobuf::reflect::ProtobufValue for ProcessTag {
+    fn as_ref(&self) -> ::protobuf::reflect::ProtobufValueRef {
+        ::protobuf::reflect::ProtobufValueRef::Enum(self.descriptor())
+    }
+}
+
 static file_descriptor_proto_data: &'static [u8] = b"\
-    \n\x11proto/hello.proto\">\n\x08Greeting\x12\x16\n\x06person\x18\x01\x20\
-    \x01(\tR\x06person\x12\x1a\n\x08language\x18\x02\x20\x01(\tR\x08language\
-    \"7\n\x0cGreetingList\x12'\n\tgreetings\x18\x01\x20\x03(\x0b2\t.Greeting\
-    R\tgreetingsJ\x93\x02\n\x06\x12\x04\0\0\t\x01\n\x08\n\x01\x0c\x12\x03\0\
-    \0\x12\n\n\n\x02\x04\0\x12\x04\x02\0\x05\x01\n\n\n\x03\x04\0\x01\x12\x03\
-    \x02\x08\x10\n\x0b\n\x04\x04\0\x02\0\x12\x03\x03\x02\x14\n\r\n\x05\x04\0\
-    \x02\0\x04\x12\x04\x03\x02\x02\x12\n\x0c\n\x05\x04\0\x02\0\x05\x12\x03\
-    \x03\x02\x08\n\x0c\n\x05\x04\0\x02\0\x01\x12\x03\x03\t\x0f\n\x0c\n\x05\
-    \x04\0\x02\0\x03\x12\x03\x03\x12\x13\n\x0b\n\x04\x04\0\x02\x01\x12\x03\
-    \x04\x02\x16\n\r\n\x05\x04\0\x02\x01\x04\x12\x04\x04\x02\x03\x14\n\x0c\n\
-    \x05\x04\0\x02\x01\x05\x12\x03\x04\x02\x08\n\x0c\n\x05\x04\0\x02\x01\x01\
-    \x12\x03\x04\t\x11\n\x0c\n\x05\x04\0\x02\x01\x03\x12\x03\x04\x14\x15\n\n\
-    \n\x02\x04\x01\x12\x04\x07\0\t\x01\n\n\n\x03\x04\x01\x01\x12\x03\x07\x08\
-    \x14\n\x0b\n\x04\x04\x01\x02\0\x12\x03\x08\x02\"\n\x0c\n\x05\x04\x01\x02\
-    \0\x04\x12\x03\x08\x02\n\n\x0c\n\x05\x04\x01\x02\0\x06\x12\x03\x08\x0b\
-    \x13\n\x0c\n\x05\x04\x01\x02\0\x01\x12\x03\x08\x14\x1d\n\x0c\n\x05\x04\
-    \x01\x02\0\x03\x12\x03\x08\x20!b\x06proto3\
+    \n\x11proto/hello.proto\x1a\x1fgoogle/protobuf/timestamp.proto\">\n\x08G\
+    reeting\x12\x16\n\x06person\x18\x01\x20\x01(\tR\x06person\x12\x1a\n\x08l\
+    anguage\x18\x02\x20\x01(\tR\x08language\"7\n\x0cGreetingList\x12'\n\tgre\
+    etings\x18\x01\x20\x03(\x0b2\t.GreetingR\tgreetings\"_\n\x0bProcessInfo\
+    \x12\x18\n\x07eventId\x18\x01\x20\x01(\tR\x07eventId\x12\x1a\n\x08worker\
+    Id\x18\x02\x20\x01(\tR\x08workerId\x12\x1a\n\x08parentId\x18\x03\x20\x01\
+    (\tR\x08parentId\"\xf1\x01\n\x0eProcessStarted\x12\x20\n\x04info\x18\x01\
+    \x20\x01(\x0b2\x0c.ProcessInfoR\x04info\x12\x1d\n\x03tag\x18\x02\x20\x01\
+    (\x0e2\x0b.ProcessTagR\x03tag\x12D\n\x0fcreateTimestamp\x18\x03\x20\x01(\
+    \x0b2\x1a.google.protobuf.TimestampR\x0fcreateTimestamp\x124\n\x15firstR\
+    estartTimestamp\x18\x04\x20\x01(\tR\x15firstRestartTimestamp\x12\"\n\x0c\
+    restartCount\x18\x05\x20\x01(\rR\x0crestartCount\"\x9a\x01\n\x11ProcessT\
+    erminated\x12\x20\n\x04info\x18\x01\x20\x01(\x0b2\x0c.ProcessInfoR\x04in\
+    fo\x12\x1d\n\x03tag\x18\x02\x20\x01(\x0e2\x0b.ProcessTagR\x03tag\x12D\n\
+    \x0fcreateTimestamp\x18\x03\x20\x01(\x0b2\x1a.google.protobuf.TimestampR\
+    \x0fcreateTimestamp\"\x99\x01\n\x10ProcessCompleted\x12\x20\n\x04info\
+    \x18\x01\x20\x01(\x0b2\x0c.ProcessInfoR\x04info\x12\x1d\n\x03tag\x18\x02\
+    \x20\x01(\x0e2\x0b.ProcessTagR\x03tag\x12D\n\x0fcreateTimestamp\x18\x03\
+    \x20\x01(\x0b2\x1a.google.protobuf.TimestampR\x0fcreateTimestamp\"\xac\
+    \x01\n\rProcessFailed\x12\x20\n\x04info\x18\x01\x20\x01(\x0b2\x0c.Proces\
+    sInfoR\x04info\x12\x1d\n\x03tag\x18\x02\x20\x01(\x0e2\x0b.ProcessTagR\
+    \x03tag\x12\x14\n\x05error\x18\x03\x20\x01(\tR\x05error\x12D\n\x0fcreate\
+    Timestamp\x18\x04\x20\x01(\x0b2\x1a.google.protobuf.TimestampR\x0fcreate\
+    Timestamp\"\x91\x02\n\x0cProcessEvent\x129\n\x0eprocessStarted\x18\x01\
+    \x20\x01(\x0b2\x0f.ProcessStartedH\0R\x0eprocessStarted\x12B\n\x11proces\
+    sTerminated\x18\x02\x20\x01(\x0b2\x12.ProcessTerminatedH\0R\x11processTe\
+    rminated\x12?\n\x10processCompleted\x18\x03\x20\x01(\x0b2\x11.ProcessCom\
+    pletedH\0R\x10processCompleted\x126\n\rprocessFailed\x18\x04\x20\x01(\
+    \x0b2\x0e.ProcessFailedH\0R\rprocessFailedB\t\n\x07payload*(\n\nProcessT\
+    ag\x12\n\n\x06WORKER\x10\0\x12\x0e\n\nSUPERVISOR\x10\x01J\xcd\x10\n\x06\
+    \x12\x04\0\0<\x01\n\x08\n\x01\x0c\x12\x03\0\0\x12\n\t\n\x02\x03\0\x12\
+    \x03\x02\0)\n\n\n\x02\x04\0\x12\x04\x04\0\x07\x01\n\n\n\x03\x04\0\x01\
+    \x12\x03\x04\x08\x10\n\x0b\n\x04\x04\0\x02\0\x12\x03\x05\x02\x14\n\r\n\
+    \x05\x04\0\x02\0\x04\x12\x04\x05\x02\x04\x12\n\x0c\n\x05\x04\0\x02\0\x05\
+    \x12\x03\x05\x02\x08\n\x0c\n\x05\x04\0\x02\0\x01\x12\x03\x05\t\x0f\n\x0c\
+    \n\x05\x04\0\x02\0\x03\x12\x03\x05\x12\x13\n\x0b\n\x04\x04\0\x02\x01\x12\
+    \x03\x06\x02\x16\n\r\n\x05\x04\0\x02\x01\x04\x12\x04\x06\x02\x05\x14\n\
+    \x0c\n\x05\x04\0\x02\x01\x05\x12\x03\x06\x02\x08\n\x0c\n\x05\x04\0\x02\
+    \x01\x01\x12\x03\x06\t\x11\n\x0c\n\x05\x04\0\x02\x01\x03\x12\x03\x06\x14\
+    \x15\n\n\n\x02\x04\x01\x12\x04\t\0\x0b\x01\n\n\n\x03\x04\x01\x01\x12\x03\
+    \t\x08\x14\n\x0b\n\x04\x04\x01\x02\0\x12\x03\n\x02\"\n\x0c\n\x05\x04\x01\
+    \x02\0\x04\x12\x03\n\x02\n\n\x0c\n\x05\x04\x01\x02\0\x06\x12\x03\n\x0b\
+    \x13\n\x0c\n\x05\x04\x01\x02\0\x01\x12\x03\n\x14\x1d\n\x0c\n\x05\x04\x01\
+    \x02\0\x03\x12\x03\n\x20!\n[\n\x02\x05\0\x12\x04\x0f\0\x12\x012O////////\
+    //////////////////////////////////////////////////////////////////////\n\
+    \n\n\n\x03\x05\0\x01\x12\x03\x0f\x05\x0f\n\x0b\n\x04\x05\0\x02\0\x12\x03\
+    \x10\x02\r\n\x0c\n\x05\x05\0\x02\0\x01\x12\x03\x10\x02\x08\n\x0c\n\x05\
+    \x05\0\x02\0\x02\x12\x03\x10\x0b\x0c\n\x0b\n\x04\x05\0\x02\x01\x12\x03\
+    \x11\x02\x11\n\x0c\n\x05\x05\0\x02\x01\x01\x12\x03\x11\x02\x0c\n\x0c\n\
+    \x05\x05\0\x02\x01\x02\x12\x03\x11\x0f\x10\n\n\n\x02\x04\x02\x12\x04\x14\
+    \0\x18\x01\n\n\n\x03\x04\x02\x01\x12\x03\x14\x08\x13\n\x0b\n\x04\x04\x02\
+    \x02\0\x12\x03\x15\x02\x16\n\r\n\x05\x04\x02\x02\0\x04\x12\x04\x15\x02\
+    \x14\x15\n\x0c\n\x05\x04\x02\x02\0\x05\x12\x03\x15\x02\x08\n\x0c\n\x05\
+    \x04\x02\x02\0\x01\x12\x03\x15\t\x10\n\x0c\n\x05\x04\x02\x02\0\x03\x12\
+    \x03\x15\x14\x15\n\x0b\n\x04\x04\x02\x02\x01\x12\x03\x16\x02\x16\n\r\n\
+    \x05\x04\x02\x02\x01\x04\x12\x04\x16\x02\x15\x16\n\x0c\n\x05\x04\x02\x02\
+    \x01\x05\x12\x03\x16\x02\x08\n\x0c\n\x05\x04\x02\x02\x01\x01\x12\x03\x16\
+    \t\x11\n\x0c\n\x05\x04\x02\x02\x01\x03\x12\x03\x16\x14\x15\n\x0b\n\x04\
+    \x04\x02\x02\x02\x12\x03\x17\x02\x16\n\r\n\x05\x04\x02\x02\x02\x04\x12\
+    \x04\x17\x02\x16\x16\n\x0c\n\x05\x04\x02\x02\x02\x05\x12\x03\x17\x02\x08\
+    \n\x0c\n\x05\x04\x02\x02\x02\x01\x12\x03\x17\t\x11\n\x0c\n\x05\x04\x02\
+    \x02\x02\x03\x12\x03\x17\x14\x15\n\n\n\x02\x04\x03\x12\x04\x1a\0\x20\x01\
+    \n\n\n\x03\x04\x03\x01\x12\x03\x1a\x08\x16\n\x0b\n\x04\x04\x03\x02\0\x12\
+    \x03\x1b\x02\x17\n\r\n\x05\x04\x03\x02\0\x04\x12\x04\x1b\x02\x1a\x18\n\
+    \x0c\n\x05\x04\x03\x02\0\x06\x12\x03\x1b\x02\r\n\x0c\n\x05\x04\x03\x02\0\
+    \x01\x12\x03\x1b\x0e\x12\n\x0c\n\x05\x04\x03\x02\0\x03\x12\x03\x1b\x15\
+    \x16\n\x0b\n\x04\x04\x03\x02\x01\x12\x03\x1c\x02\x15\n\r\n\x05\x04\x03\
+    \x02\x01\x04\x12\x04\x1c\x02\x1b\x17\n\x0c\n\x05\x04\x03\x02\x01\x06\x12\
+    \x03\x1c\x02\x0c\n\x0c\n\x05\x04\x03\x02\x01\x01\x12\x03\x1c\r\x10\n\x0c\
+    \n\x05\x04\x03\x02\x01\x03\x12\x03\x1c\x13\x14\n\x0b\n\x04\x04\x03\x02\
+    \x02\x12\x03\x1d\x020\n\r\n\x05\x04\x03\x02\x02\x04\x12\x04\x1d\x02\x1c\
+    \x15\n\x0c\n\x05\x04\x03\x02\x02\x06\x12\x03\x1d\x02\x1b\n\x0c\n\x05\x04\
+    \x03\x02\x02\x01\x12\x03\x1d\x1c+\n\x0c\n\x05\x04\x03\x02\x02\x03\x12\
+    \x03\x1d./\n\x0b\n\x04\x04\x03\x02\x03\x12\x03\x1e\x02#\n\r\n\x05\x04\
+    \x03\x02\x03\x04\x12\x04\x1e\x02\x1d0\n\x0c\n\x05\x04\x03\x02\x03\x05\
+    \x12\x03\x1e\x02\x08\n\x0c\n\x05\x04\x03\x02\x03\x01\x12\x03\x1e\t\x1e\n\
+    \x0c\n\x05\x04\x03\x02\x03\x03\x12\x03\x1e!\"\n\x0b\n\x04\x04\x03\x02\
+    \x04\x12\x03\x1f\x02\x1a\n\r\n\x05\x04\x03\x02\x04\x04\x12\x04\x1f\x02\
+    \x1e#\n\x0c\n\x05\x04\x03\x02\x04\x05\x12\x03\x1f\x02\x08\n\x0c\n\x05\
+    \x04\x03\x02\x04\x01\x12\x03\x1f\t\x15\n\x0c\n\x05\x04\x03\x02\x04\x03\
+    \x12\x03\x1f\x18\x19\n\n\n\x02\x04\x04\x12\x04\"\0&\x01\n\n\n\x03\x04\
+    \x04\x01\x12\x03\"\x08\x19\n\x0b\n\x04\x04\x04\x02\0\x12\x03#\x02\x17\n\
+    \r\n\x05\x04\x04\x02\0\x04\x12\x04#\x02\"\x1b\n\x0c\n\x05\x04\x04\x02\0\
+    \x06\x12\x03#\x02\r\n\x0c\n\x05\x04\x04\x02\0\x01\x12\x03#\x0e\x12\n\x0c\
+    \n\x05\x04\x04\x02\0\x03\x12\x03#\x15\x16\n\x0b\n\x04\x04\x04\x02\x01\
+    \x12\x03$\x02\x15\n\r\n\x05\x04\x04\x02\x01\x04\x12\x04$\x02#\x17\n\x0c\
+    \n\x05\x04\x04\x02\x01\x06\x12\x03$\x02\x0c\n\x0c\n\x05\x04\x04\x02\x01\
+    \x01\x12\x03$\r\x10\n\x0c\n\x05\x04\x04\x02\x01\x03\x12\x03$\x13\x14\n\
+    \x0b\n\x04\x04\x04\x02\x02\x12\x03%\x020\n\r\n\x05\x04\x04\x02\x02\x04\
+    \x12\x04%\x02$\x15\n\x0c\n\x05\x04\x04\x02\x02\x06\x12\x03%\x02\x1b\n\
+    \x0c\n\x05\x04\x04\x02\x02\x01\x12\x03%\x1c+\n\x0c\n\x05\x04\x04\x02\x02\
+    \x03\x12\x03%./\n\n\n\x02\x04\x05\x12\x04(\0,\x01\n\n\n\x03\x04\x05\x01\
+    \x12\x03(\x08\x18\n\x0b\n\x04\x04\x05\x02\0\x12\x03)\x02\x17\n\r\n\x05\
+    \x04\x05\x02\0\x04\x12\x04)\x02(\x1a\n\x0c\n\x05\x04\x05\x02\0\x06\x12\
+    \x03)\x02\r\n\x0c\n\x05\x04\x05\x02\0\x01\x12\x03)\x0e\x12\n\x0c\n\x05\
+    \x04\x05\x02\0\x03\x12\x03)\x15\x16\n\x0b\n\x04\x04\x05\x02\x01\x12\x03*\
+    \x02\x15\n\r\n\x05\x04\x05\x02\x01\x04\x12\x04*\x02)\x17\n\x0c\n\x05\x04\
+    \x05\x02\x01\x06\x12\x03*\x02\x0c\n\x0c\n\x05\x04\x05\x02\x01\x01\x12\
+    \x03*\r\x10\n\x0c\n\x05\x04\x05\x02\x01\x03\x12\x03*\x13\x14\n\x0b\n\x04\
+    \x04\x05\x02\x02\x12\x03+\x020\n\r\n\x05\x04\x05\x02\x02\x04\x12\x04+\
+    \x02*\x15\n\x0c\n\x05\x04\x05\x02\x02\x06\x12\x03+\x02\x1b\n\x0c\n\x05\
+    \x04\x05\x02\x02\x01\x12\x03+\x1c+\n\x0c\n\x05\x04\x05\x02\x02\x03\x12\
+    \x03+./\n\n\n\x02\x04\x06\x12\x04.\03\x01\n\n\n\x03\x04\x06\x01\x12\x03.\
+    \x08\x15\n\x0b\n\x04\x04\x06\x02\0\x12\x03/\x02\x17\n\r\n\x05\x04\x06\
+    \x02\0\x04\x12\x04/\x02.\x17\n\x0c\n\x05\x04\x06\x02\0\x06\x12\x03/\x02\
+    \r\n\x0c\n\x05\x04\x06\x02\0\x01\x12\x03/\x0e\x12\n\x0c\n\x05\x04\x06\
+    \x02\0\x03\x12\x03/\x15\x16\n\x0b\n\x04\x04\x06\x02\x01\x12\x030\x02\x15\
+    \n\r\n\x05\x04\x06\x02\x01\x04\x12\x040\x02/\x17\n\x0c\n\x05\x04\x06\x02\
+    \x01\x06\x12\x030\x02\x0c\n\x0c\n\x05\x04\x06\x02\x01\x01\x12\x030\r\x10\
+    \n\x0c\n\x05\x04\x06\x02\x01\x03\x12\x030\x13\x14\n\x0b\n\x04\x04\x06\
+    \x02\x02\x12\x031\x02\x13\n\r\n\x05\x04\x06\x02\x02\x04\x12\x041\x020\
+    \x15\n\x0c\n\x05\x04\x06\x02\x02\x05\x12\x031\x02\x08\n\x0c\n\x05\x04\
+    \x06\x02\x02\x01\x12\x031\t\x0e\n\x0c\n\x05\x04\x06\x02\x02\x03\x12\x031\
+    \x11\x12\n\x0b\n\x04\x04\x06\x02\x03\x12\x032\x020\n\r\n\x05\x04\x06\x02\
+    \x03\x04\x12\x042\x021\x13\n\x0c\n\x05\x04\x06\x02\x03\x06\x12\x032\x02\
+    \x1b\n\x0c\n\x05\x04\x06\x02\x03\x01\x12\x032\x1c+\n\x0c\n\x05\x04\x06\
+    \x02\x03\x03\x12\x032./\n\n\n\x02\x04\x07\x12\x045\0<\x01\n\n\n\x03\x04\
+    \x07\x01\x12\x035\x08\x14\n\x0c\n\x04\x04\x07\x08\0\x12\x046\x02;\x03\n\
+    \x0c\n\x05\x04\x07\x08\0\x01\x12\x036\x08\x0f\n\x0b\n\x04\x04\x07\x02\0\
+    \x12\x037\x04&\n\x0c\n\x05\x04\x07\x02\0\x06\x12\x037\x04\x12\n\x0c\n\
+    \x05\x04\x07\x02\0\x01\x12\x037\x13!\n\x0c\n\x05\x04\x07\x02\0\x03\x12\
+    \x037$%\n\x0b\n\x04\x04\x07\x02\x01\x12\x038\x04,\n\x0c\n\x05\x04\x07\
+    \x02\x01\x06\x12\x038\x04\x15\n\x0c\n\x05\x04\x07\x02\x01\x01\x12\x038\
+    \x16'\n\x0c\n\x05\x04\x07\x02\x01\x03\x12\x038*+\n\x0b\n\x04\x04\x07\x02\
+    \x02\x12\x039\x04*\n\x0c\n\x05\x04\x07\x02\x02\x06\x12\x039\x04\x14\n\
+    \x0c\n\x05\x04\x07\x02\x02\x01\x12\x039\x15%\n\x0c\n\x05\x04\x07\x02\x02\
+    \x03\x12\x039()\n\x0b\n\x04\x04\x07\x02\x03\x12\x03:\x04$\n\x0c\n\x05\
+    \x04\x07\x02\x03\x06\x12\x03:\x04\x11\n\x0c\n\x05\x04\x07\x02\x03\x01\
+    \x12\x03:\x12\x1f\n\x0c\n\x05\x04\x07\x02\x03\x03\x12\x03:\"#b\x06proto3\
 ";
 
 static mut file_descriptor_proto_lazy: ::protobuf::lazy::Lazy<::protobuf::descriptor::FileDescriptorProto> = ::protobuf::lazy::Lazy {
