@@ -7,6 +7,10 @@ in
       figlet
 
       protobuf
+      cargo
+      rustc
+      rustfmt
+      openssl
     ];
     shellHook = ''
       figlet "capataz-monitor"

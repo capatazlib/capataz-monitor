@@ -1,12 +1,13 @@
-mod hello;
-mod store;
+pub mod hello;
+// mod store;
 
+/*
 use protobuf::error::ProtobufError;
 use protobuf::ProtobufResult;
 use std::io::{self, stderr, Write};
 use std::{env, process};
 
-fn main() {
+pub fn protobuf_example() {
     let args: Vec<String> = env::args().collect();
     get_exec(&args)
         .map_err(ProtobufError::IoError)
@@ -17,7 +18,7 @@ fn main() {
         })
 }
 
-fn get_exec(args: &Vec<String>) -> Result<(&str, fn(&str) -> ProtobufResult<()>), io::Error> {
+pub fn get_exec(args: &Vec<String>) -> Result<(&str, fn(&str) -> ProtobufResult<()>), io::Error> {
     if args.len() != 2 {
         return Err(io::Error::new(
             io::ErrorKind::Other,
@@ -26,3 +27,4 @@ fn get_exec(args: &Vec<String>) -> Result<(&str, fn(&str) -> ProtobufResult<()>)
     }
     Ok((&args[1], store::exec))
 }
+*/

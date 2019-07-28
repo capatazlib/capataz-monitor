@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+message Greeting {
+  string person = 1;
+  string language = 2;
+}
+
+message GreetingList {
+  repeated Greeting greetings = 1;
+}

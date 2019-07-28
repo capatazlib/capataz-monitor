@@ -1,0 +1,12 @@
+version: '3'
+services:
+  prometheus:
+    image: "prom/prometheus"
+    volumes:
+      - './config/prometheus/:/etc/prometheus/'
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--log.level=debug'
+    ports:
+      - "9090:9090"
+    network_mode: host
