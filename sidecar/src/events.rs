@@ -29,9 +29,9 @@ const _PROTOBUF_VERSION_CHECK: () = ::protobuf::VERSION_2_8_0;
 #[derive(PartialEq,Clone,Default)]
 pub struct ProcessInfo {
     // message fields
-    pub eventId: ::std::string::String,
-    pub workerId: ::std::string::String,
-    pub parentId: ::std::string::String,
+    pub event_id: ::std::string::String,
+    pub worker_id: ::std::string::String,
+    pub parent_id: ::std::string::String,
     // special fields
     pub unknown_fields: ::protobuf::UnknownFields,
     pub cached_size: ::protobuf::CachedSize,
@@ -48,82 +48,82 @@ impl ProcessInfo {
         ::std::default::Default::default()
     }
 
-    // string eventId = 1;
+    // string event_id = 1;
 
 
-    pub fn get_eventId(&self) -> &str {
-        &self.eventId
+    pub fn get_event_id(&self) -> &str {
+        &self.event_id
     }
-    pub fn clear_eventId(&mut self) {
-        self.eventId.clear();
+    pub fn clear_event_id(&mut self) {
+        self.event_id.clear();
     }
 
     // Param is passed by value, moved
-    pub fn set_eventId(&mut self, v: ::std::string::String) {
-        self.eventId = v;
+    pub fn set_event_id(&mut self, v: ::std::string::String) {
+        self.event_id = v;
     }
 
     // Mutable pointer to the field.
     // If field is not initialized, it is initialized with default value first.
-    pub fn mut_eventId(&mut self) -> &mut ::std::string::String {
-        &mut self.eventId
+    pub fn mut_event_id(&mut self) -> &mut ::std::string::String {
+        &mut self.event_id
     }
 
     // Take field
-    pub fn take_eventId(&mut self) -> ::std::string::String {
-        ::std::mem::replace(&mut self.eventId, ::std::string::String::new())
+    pub fn take_event_id(&mut self) -> ::std::string::String {
+        ::std::mem::replace(&mut self.event_id, ::std::string::String::new())
     }
 
-    // string workerId = 2;
+    // string worker_id = 2;
 
 
-    pub fn get_workerId(&self) -> &str {
-        &self.workerId
+    pub fn get_worker_id(&self) -> &str {
+        &self.worker_id
     }
-    pub fn clear_workerId(&mut self) {
-        self.workerId.clear();
+    pub fn clear_worker_id(&mut self) {
+        self.worker_id.clear();
     }
 
     // Param is passed by value, moved
-    pub fn set_workerId(&mut self, v: ::std::string::String) {
-        self.workerId = v;
+    pub fn set_worker_id(&mut self, v: ::std::string::String) {
+        self.worker_id = v;
     }
 
     // Mutable pointer to the field.
     // If field is not initialized, it is initialized with default value first.
-    pub fn mut_workerId(&mut self) -> &mut ::std::string::String {
-        &mut self.workerId
+    pub fn mut_worker_id(&mut self) -> &mut ::std::string::String {
+        &mut self.worker_id
     }
 
     // Take field
-    pub fn take_workerId(&mut self) -> ::std::string::String {
-        ::std::mem::replace(&mut self.workerId, ::std::string::String::new())
+    pub fn take_worker_id(&mut self) -> ::std::string::String {
+        ::std::mem::replace(&mut self.worker_id, ::std::string::String::new())
     }
 
-    // string parentId = 3;
+    // string parent_id = 3;
 
 
-    pub fn get_parentId(&self) -> &str {
-        &self.parentId
+    pub fn get_parent_id(&self) -> &str {
+        &self.parent_id
     }
-    pub fn clear_parentId(&mut self) {
-        self.parentId.clear();
+    pub fn clear_parent_id(&mut self) {
+        self.parent_id.clear();
     }
 
     // Param is passed by value, moved
-    pub fn set_parentId(&mut self, v: ::std::string::String) {
-        self.parentId = v;
+    pub fn set_parent_id(&mut self, v: ::std::string::String) {
+        self.parent_id = v;
     }
 
     // Mutable pointer to the field.
     // If field is not initialized, it is initialized with default value first.
-    pub fn mut_parentId(&mut self) -> &mut ::std::string::String {
-        &mut self.parentId
+    pub fn mut_parent_id(&mut self) -> &mut ::std::string::String {
+        &mut self.parent_id
     }
 
     // Take field
-    pub fn take_parentId(&mut self) -> ::std::string::String {
-        ::std::mem::replace(&mut self.parentId, ::std::string::String::new())
+    pub fn take_parent_id(&mut self) -> ::std::string::String {
+        ::std::mem::replace(&mut self.parent_id, ::std::string::String::new())
     }
 }
 
@@ -137,13 +137,13 @@ impl ::protobuf::Message for ProcessInfo {
             let (field_number, wire_type) = is.read_tag_unpack()?;
             match field_number {
                 1 => {
-                    ::protobuf::rt::read_singular_proto3_string_into(wire_type, is, &mut self.eventId)?;
+                    ::protobuf::rt::read_singular_proto3_string_into(wire_type, is, &mut self.event_id)?;
                 },
                 2 => {
-                    ::protobuf::rt::read_singular_proto3_string_into(wire_type, is, &mut self.workerId)?;
+                    ::protobuf::rt::read_singular_proto3_string_into(wire_type, is, &mut self.worker_id)?;
                 },
                 3 => {
-                    ::protobuf::rt::read_singular_proto3_string_into(wire_type, is, &mut self.parentId)?;
+                    ::protobuf::rt::read_singular_proto3_string_into(wire_type, is, &mut self.parent_id)?;
                 },
                 _ => {
                     ::protobuf::rt::read_unknown_or_skip_group(field_number, wire_type, is, self.mut_unknown_fields())?;
@@ -157,14 +157,14 @@ impl ::protobuf::Message for ProcessInfo {
     #[allow(unused_variables)]
     fn compute_size(&self) -> u32 {
         let mut my_size = 0;
-        if !self.eventId.is_empty() {
-            my_size += ::protobuf::rt::string_size(1, &self.eventId);
+        if !self.event_id.is_empty() {
+            my_size += ::protobuf::rt::string_size(1, &self.event_id);
         }
-        if !self.workerId.is_empty() {
-            my_size += ::protobuf::rt::string_size(2, &self.workerId);
+        if !self.worker_id.is_empty() {
+            my_size += ::protobuf::rt::string_size(2, &self.worker_id);
         }
-        if !self.parentId.is_empty() {
-            my_size += ::protobuf::rt::string_size(3, &self.parentId);
+        if !self.parent_id.is_empty() {
+            my_size += ::protobuf::rt::string_size(3, &self.parent_id);
         }
         my_size += ::protobuf::rt::unknown_fields_size(self.get_unknown_fields());
         self.cached_size.set(my_size);
@@ -172,14 +172,14 @@ impl ::protobuf::Message for ProcessInfo {
     }
 
     fn write_to_with_cached_sizes(&self, os: &mut ::protobuf::CodedOutputStream) -> ::protobuf::ProtobufResult<()> {
-        if !self.eventId.is_empty() {
-            os.write_string(1, &self.eventId)?;
+        if !self.event_id.is_empty() {
+            os.write_string(1, &self.event_id)?;
         }
-        if !self.workerId.is_empty() {
-            os.write_string(2, &self.workerId)?;
+        if !self.worker_id.is_empty() {
+            os.write_string(2, &self.worker_id)?;
         }
-        if !self.parentId.is_empty() {
-            os.write_string(3, &self.parentId)?;
+        if !self.parent_id.is_empty() {
+            os.write_string(3, &self.parent_id)?;
         }
         os.write_unknown_fields(self.get_unknown_fields())?;
         ::std::result::Result::Ok(())
@@ -224,19 +224,19 @@ impl ::protobuf::Message for ProcessInfo {
             descriptor.get(|| {
                 let mut fields = ::std::vec::Vec::new();
                 fields.push(::protobuf::reflect::accessor::make_simple_field_accessor::<_, ::protobuf::types::ProtobufTypeString>(
-                    "eventId",
-                    |m: &ProcessInfo| { &m.eventId },
-                    |m: &mut ProcessInfo| { &mut m.eventId },
+                    "event_id",
+                    |m: &ProcessInfo| { &m.event_id },
+                    |m: &mut ProcessInfo| { &mut m.event_id },
                 ));
                 fields.push(::protobuf::reflect::accessor::make_simple_field_accessor::<_, ::protobuf::types::ProtobufTypeString>(
-                    "workerId",
-                    |m: &ProcessInfo| { &m.workerId },
-                    |m: &mut ProcessInfo| { &mut m.workerId },
+                    "worker_id",
+                    |m: &ProcessInfo| { &m.worker_id },
+                    |m: &mut ProcessInfo| { &mut m.worker_id },
                 ));
                 fields.push(::protobuf::reflect::accessor::make_simple_field_accessor::<_, ::protobuf::types::ProtobufTypeString>(
-                    "parentId",
-                    |m: &ProcessInfo| { &m.parentId },
-                    |m: &mut ProcessInfo| { &mut m.parentId },
+                    "parent_id",
+                    |m: &ProcessInfo| { &m.parent_id },
+                    |m: &mut ProcessInfo| { &mut m.parent_id },
                 ));
                 ::protobuf::reflect::MessageDescriptor::new::<ProcessInfo>(
                     "ProcessInfo",
@@ -260,9 +260,9 @@ impl ::protobuf::Message for ProcessInfo {
 
 impl ::protobuf::Clear for ProcessInfo {
     fn clear(&mut self) {
-        self.eventId.clear();
-        self.workerId.clear();
-        self.parentId.clear();
+        self.event_id.clear();
+        self.worker_id.clear();
+        self.parent_id.clear();
         self.unknown_fields.clear();
     }
 }
@@ -284,9 +284,9 @@ pub struct ProcessStarted {
     // message fields
     pub info: ::protobuf::SingularPtrField<ProcessInfo>,
     pub tag: ProcessTag,
-    pub createTimestamp: ::protobuf::SingularPtrField<::protobuf::well_known_types::Timestamp>,
-    pub firstRestartTimestamp: ::std::string::String,
-    pub restartCount: u32,
+    pub create_timestamp: ::protobuf::SingularPtrField<::protobuf::well_known_types::Timestamp>,
+    pub first_restart_timestamp: ::std::string::String,
+    pub restart_count: u32,
     // special fields
     pub unknown_fields: ::protobuf::UnknownFields,
     pub cached_size: ::protobuf::CachedSize,
@@ -303,7 +303,7 @@ impl ProcessStarted {
         ::std::default::Default::default()
     }
 
-    // .ProcessInfo info = 1;
+    // .capataz.events.ProcessInfo info = 1;
 
 
     pub fn get_info(&self) -> &ProcessInfo {
@@ -336,7 +336,7 @@ impl ProcessStarted {
         self.info.take().unwrap_or_else(|| ProcessInfo::new())
     }
 
-    // .ProcessTag tag = 2;
+    // .capataz.events.ProcessTag tag = 2;
 
 
     pub fn get_tag(&self) -> ProcessTag {
@@ -351,78 +351,78 @@ impl ProcessStarted {
         self.tag = v;
     }
 
-    // .google.protobuf.Timestamp createTimestamp = 3;
+    // .google.protobuf.Timestamp create_timestamp = 3;
 
 
-    pub fn get_createTimestamp(&self) -> &::protobuf::well_known_types::Timestamp {
-        self.createTimestamp.as_ref().unwrap_or_else(|| ::protobuf::well_known_types::Timestamp::default_instance())
+    pub fn get_create_timestamp(&self) -> &::protobuf::well_known_types::Timestamp {
+        self.create_timestamp.as_ref().unwrap_or_else(|| ::protobuf::well_known_types::Timestamp::default_instance())
     }
-    pub fn clear_createTimestamp(&mut self) {
-        self.createTimestamp.clear();
+    pub fn clear_create_timestamp(&mut self) {
+        self.create_timestamp.clear();
     }
 
-    pub fn has_createTimestamp(&self) -> bool {
-        self.createTimestamp.is_some()
+    pub fn has_create_timestamp(&self) -> bool {
+        self.create_timestamp.is_some()
     }
 
     // Param is passed by value, moved
-    pub fn set_createTimestamp(&mut self, v: ::protobuf::well_known_types::Timestamp) {
-        self.createTimestamp = ::protobuf::SingularPtrField::some(v);
+    pub fn set_create_timestamp(&mut self, v: ::protobuf::well_known_types::Timestamp) {
+        self.create_timestamp = ::protobuf::SingularPtrField::some(v);
     }
 
     // Mutable pointer to the field.
     // If field is not initialized, it is initialized with default value first.
-    pub fn mut_createTimestamp(&mut self) -> &mut ::protobuf::well_known_types::Timestamp {
-        if self.createTimestamp.is_none() {
-            self.createTimestamp.set_default();
+    pub fn mut_create_timestamp(&mut self) -> &mut ::protobuf::well_known_types::Timestamp {
+        if self.create_timestamp.is_none() {
+            self.create_timestamp.set_default();
         }
-        self.createTimestamp.as_mut().unwrap()
+        self.create_timestamp.as_mut().unwrap()
     }
 
     // Take field
-    pub fn take_createTimestamp(&mut self) -> ::protobuf::well_known_types::Timestamp {
-        self.createTimestamp.take().unwrap_or_else(|| ::protobuf::well_known_types::Timestamp::new())
+    pub fn take_create_timestamp(&mut self) -> ::protobuf::well_known_types::Timestamp {
+        self.create_timestamp.take().unwrap_or_else(|| ::protobuf::well_known_types::Timestamp::new())
     }
 
-    // string firstRestartTimestamp = 4;
+    // string first_restart_timestamp = 4;
 
 
-    pub fn get_firstRestartTimestamp(&self) -> &str {
-        &self.firstRestartTimestamp
+    pub fn get_first_restart_timestamp(&self) -> &str {
+        &self.first_restart_timestamp
     }
-    pub fn clear_firstRestartTimestamp(&mut self) {
-        self.firstRestartTimestamp.clear();
+    pub fn clear_first_restart_timestamp(&mut self) {
+        self.first_restart_timestamp.clear();
     }
 
     // Param is passed by value, moved
-    pub fn set_firstRestartTimestamp(&mut self, v: ::std::string::String) {
-        self.firstRestartTimestamp = v;
+    pub fn set_first_restart_timestamp(&mut self, v: ::std::string::String) {
+        self.first_restart_timestamp = v;
     }
 
     // Mutable pointer to the field.
     // If field is not initialized, it is initialized with default value first.
-    pub fn mut_firstRestartTimestamp(&mut self) -> &mut ::std::string::String {
-        &mut self.firstRestartTimestamp
+    pub fn mut_first_restart_timestamp(&mut self) -> &mut ::std::string::String {
+        &mut self.first_restart_timestamp
     }
 
     // Take field
-    pub fn take_firstRestartTimestamp(&mut self) -> ::std::string::String {
-        ::std::mem::replace(&mut self.firstRestartTimestamp, ::std::string::String::new())
+    pub fn take_first_restart_timestamp(&mut self) -> ::std::string::String {
+        ::std::mem::replace(&mut self.first_restart_timestamp, ::std::string::String::new())
     }
 
-    // uint32 restartCount = 5;
+    // uint32 restart_count = 5;
 
 
-    pub fn get_restartCount(&self) -> u32 {
-        self.restartCount
+    pub fn get_restart_count(&self) -> u32 {
+        self.restart_count
     }
-    pub fn clear_restartCount(&mut self) {
-        self.restartCount = 0;
+    pub fn clear_restart_count(&mut self) {
+        self.restart_count = 0;
     }
 
     // Param is passed by value, moved
-    pub fn set_restartCount(&mut self, v: u32) {
-        self.restartCount = v;
+    pub fn set_restart_count(&mut self, v: u32) {
+        self.restart_count = v;
     }
 }
 
@@ -433,7 +433,7 @@ impl ::protobuf::Message for ProcessStarted {
                 return false;
             }
         };
-        for v in &self.createTimestamp {
+        for v in &self.create_timestamp {
             if !v.is_initialized() {
                 return false;
             }
@@ -452,17 +452,17 @@ impl ::protobuf::Message for ProcessStarted {
                     ::protobuf::rt::read_proto3_enum_with_unknown_fields_into(wire_type, is, &mut self.tag, 2, &mut self.unknown_fields)?
                 },
                 3 => {
-                    ::protobuf::rt::read_singular_message_into(wire_type, is, &mut self.createTimestamp)?;
+                    ::protobuf::rt::read_singular_message_into(wire_type, is, &mut self.create_timestamp)?;
                 },
                 4 => {
-                    ::protobuf::rt::read_singular_proto3_string_into(wire_type, is, &mut self.firstRestartTimestamp)?;
+                    ::protobuf::rt::read_singular_proto3_string_into(wire_type, is, &mut self.first_restart_timestamp)?;
                 },
                 5 => {
                     if wire_type != ::protobuf::wire_format::WireTypeVarint {
                         return ::std::result::Result::Err(::protobuf::rt::unexpected_wire_type(wire_type));
                     }
                     let tmp = is.read_uint32()?;
-                    self.restartCount = tmp;
+                    self.restart_count = tmp;
                 },
                 _ => {
                     ::protobuf::rt::read_unknown_or_skip_group(field_number, wire_type, is, self.mut_unknown_fields())?;
@@ -483,15 +483,15 @@ impl ::protobuf::Message for ProcessStarted {
         if self.tag != ProcessTag::WORKER {
             my_size += ::protobuf::rt::enum_size(2, self.tag);
         }
-        if let Some(ref v) = self.createTimestamp.as_ref() {
+        if let Some(ref v) = self.create_timestamp.as_ref() {
             let len = v.compute_size();
             my_size += 1 + ::protobuf::rt::compute_raw_varint32_size(len) + len;
         }
-        if !self.firstRestartTimestamp.is_empty() {
-            my_size += ::protobuf::rt::string_size(4, &self.firstRestartTimestamp);
+        if !self.first_restart_timestamp.is_empty() {
+            my_size += ::protobuf::rt::string_size(4, &self.first_restart_timestamp);
         }
-        if self.restartCount != 0 {
-            my_size += ::protobuf::rt::value_size(5, self.restartCount, ::protobuf::wire_format::WireTypeVarint);
+        if self.restart_count != 0 {
+            my_size += ::protobuf::rt::value_size(5, self.restart_count, ::protobuf::wire_format::WireTypeVarint);
         }
         my_size += ::protobuf::rt::unknown_fields_size(self.get_unknown_fields());
         self.cached_size.set(my_size);
@@ -507,16 +507,16 @@ impl ::protobuf::Message for ProcessStarted {
         if self.tag != ProcessTag::WORKER {
             os.write_enum(2, self.tag.value())?;
         }
-        if let Some(ref v) = self.createTimestamp.as_ref() {
+        if let Some(ref v) = self.create_timestamp.as_ref() {
             os.write_tag(3, ::protobuf::wire_format::WireTypeLengthDelimited)?;
             os.write_raw_varint32(v.get_cached_size())?;
             v.write_to_with_cached_sizes(os)?;
         }
-        if !self.firstRestartTimestamp.is_empty() {
-            os.write_string(4, &self.firstRestartTimestamp)?;
+        if !self.first_restart_timestamp.is_empty() {
+            os.write_string(4, &self.first_restart_timestamp)?;
         }
-        if self.restartCount != 0 {
-            os.write_uint32(5, self.restartCount)?;
+        if self.restart_count != 0 {
+            os.write_uint32(5, self.restart_count)?;
         }
         os.write_unknown_fields(self.get_unknown_fields())?;
         ::std::result::Result::Ok(())
@@ -571,19 +571,19 @@ impl ::protobuf::Message for ProcessStarted {
                     |m: &mut ProcessStarted| { &mut m.tag },
                 ));
                 fields.push(::protobuf::reflect::accessor::make_singular_ptr_field_accessor::<_, ::protobuf::types::ProtobufTypeMessage<::protobuf::well_known_types::Timestamp>>(
-                    "createTimestamp",
-                    |m: &ProcessStarted| { &m.createTimestamp },
-                    |m: &mut ProcessStarted| { &mut m.createTimestamp },
+                    "create_timestamp",
+                    |m: &ProcessStarted| { &m.create_timestamp },
+                    |m: &mut ProcessStarted| { &mut m.create_timestamp },
                 ));
                 fields.push(::protobuf::reflect::accessor::make_simple_field_accessor::<_, ::protobuf::types::ProtobufTypeString>(
-                    "firstRestartTimestamp",
-                    |m: &ProcessStarted| { &m.firstRestartTimestamp },
-                    |m: &mut ProcessStarted| { &mut m.firstRestartTimestamp },
+                    "first_restart_timestamp",
+                    |m: &ProcessStarted| { &m.first_restart_timestamp },
+                    |m: &mut ProcessStarted| { &mut m.first_restart_timestamp },
                 ));
                 fields.push(::protobuf::reflect::accessor::make_simple_field_accessor::<_, ::protobuf::types::ProtobufTypeUint32>(
-                    "restartCount",
-                    |m: &ProcessStarted| { &m.restartCount },
-                    |m: &mut ProcessStarted| { &mut m.restartCount },
+                    "restart_count",
+                    |m: &ProcessStarted| { &m.restart_count },
+                    |m: &mut ProcessStarted| { &mut m.restart_count },
                 ));
                 ::protobuf::reflect::MessageDescriptor::new::<ProcessStarted>(
                     "ProcessStarted",
@@ -609,9 +609,9 @@ impl ::protobuf::Clear for ProcessStarted {
     fn clear(&mut self) {
         self.info.clear();
         self.tag = ProcessTag::WORKER;
-        self.createTimestamp.clear();
-        self.firstRestartTimestamp.clear();
-        self.restartCount = 0;
+        self.create_timestamp.clear();
+        self.first_restart_timestamp.clear();
+        self.restart_count = 0;
         self.unknown_fields.clear();
     }
 }
@@ -633,7 +633,7 @@ pub struct ProcessTerminated {
     // message fields
     pub info: ::protobuf::SingularPtrField<ProcessInfo>,
     pub tag: ProcessTag,
-    pub createTimestamp: ::protobuf::SingularPtrField<::protobuf::well_known_types::Timestamp>,
+    pub create_timestamp: ::protobuf::SingularPtrField<::protobuf::well_known_types::Timestamp>,
     // special fields
     pub unknown_fields: ::protobuf::UnknownFields,
     pub cached_size: ::protobuf::CachedSize,
@@ -650,7 +650,7 @@ impl ProcessTerminated {
         ::std::default::Default::default()
     }
 
-    // .ProcessInfo info = 1;
+    // .capataz.events.ProcessInfo info = 1;
 
 
     pub fn get_info(&self) -> &ProcessInfo {
@@ -683,7 +683,7 @@ impl ProcessTerminated {
         self.info.take().unwrap_or_else(|| ProcessInfo::new())
     }
 
-    // .ProcessTag tag = 2;
+    // .capataz.events.ProcessTag tag = 2;
 
 
     pub fn get_tag(&self) -> ProcessTag {
@@ -698,37 +698,37 @@ impl ProcessTerminated {
         self.tag = v;
     }
 
-    // .google.protobuf.Timestamp createTimestamp = 3;
+    // .google.protobuf.Timestamp create_timestamp = 3;
 
 
-    pub fn get_createTimestamp(&self) -> &::protobuf::well_known_types::Timestamp {
-        self.createTimestamp.as_ref().unwrap_or_else(|| ::protobuf::well_known_types::Timestamp::default_instance())
+    pub fn get_create_timestamp(&self) -> &::protobuf::well_known_types::Timestamp {
+        self.create_timestamp.as_ref().unwrap_or_else(|| ::protobuf::well_known_types::Timestamp::default_instance())
     }
-    pub fn clear_createTimestamp(&mut self) {
-        self.createTimestamp.clear();
+    pub fn clear_create_timestamp(&mut self) {
+        self.create_timestamp.clear();
     }
 
-    pub fn has_createTimestamp(&self) -> bool {
-        self.createTimestamp.is_some()
+    pub fn has_create_timestamp(&self) -> bool {
+        self.create_timestamp.is_some()
     }
 
     // Param is passed by value, moved
-    pub fn set_createTimestamp(&mut self, v: ::protobuf::well_known_types::Timestamp) {
-        self.createTimestamp = ::protobuf::SingularPtrField::some(v);
+    pub fn set_create_timestamp(&mut self, v: ::protobuf::well_known_types::Timestamp) {
+        self.create_timestamp = ::protobuf::SingularPtrField::some(v);
     }
 
     // Mutable pointer to the field.
     // If field is not initialized, it is initialized with default value first.
-    pub fn mut_createTimestamp(&mut self) -> &mut ::protobuf::well_known_types::Timestamp {
-        if self.createTimestamp.is_none() {
-            self.createTimestamp.set_default();
+    pub fn mut_create_timestamp(&mut self) -> &mut ::protobuf::well_known_types::Timestamp {
+        if self.create_timestamp.is_none() {
+            self.create_timestamp.set_default();
         }
-        self.createTimestamp.as_mut().unwrap()
+        self.create_timestamp.as_mut().unwrap()
     }
 
     // Take field
-    pub fn take_createTimestamp(&mut self) -> ::protobuf::well_known_types::Timestamp {
-        self.createTimestamp.take().unwrap_or_else(|| ::protobuf::well_known_types::Timestamp::new())
+    pub fn take_create_timestamp(&mut self) -> ::protobuf::well_known_types::Timestamp {
+        self.create_timestamp.take().unwrap_or_else(|| ::protobuf::well_known_types::Timestamp::new())
     }
 }
 
@@ -739,7 +739,7 @@ impl ::protobuf::Message for ProcessTerminated {
                 return false;
             }
         };
-        for v in &self.createTimestamp {
+        for v in &self.create_timestamp {
             if !v.is_initialized() {
                 return false;
             }
@@ -758,7 +758,7 @@ impl ::protobuf::Message for ProcessTerminated {
                     ::protobuf::rt::read_proto3_enum_with_unknown_fields_into(wire_type, is, &mut self.tag, 2, &mut self.unknown_fields)?
                 },
                 3 => {
-                    ::protobuf::rt::read_singular_message_into(wire_type, is, &mut self.createTimestamp)?;
+                    ::protobuf::rt::read_singular_message_into(wire_type, is, &mut self.create_timestamp)?;
                 },
                 _ => {
                     ::protobuf::rt::read_unknown_or_skip_group(field_number, wire_type, is, self.mut_unknown_fields())?;
@@ -779,7 +779,7 @@ impl ::protobuf::Message for ProcessTerminated {
         if self.tag != ProcessTag::WORKER {
             my_size += ::protobuf::rt::enum_size(2, self.tag);
         }
-        if let Some(ref v) = self.createTimestamp.as_ref() {
+        if let Some(ref v) = self.create_timestamp.as_ref() {
             let len = v.compute_size();
             my_size += 1 + ::protobuf::rt::compute_raw_varint32_size(len) + len;
         }
@@ -797,7 +797,7 @@ impl ::protobuf::Message for ProcessTerminated {
         if self.tag != ProcessTag::WORKER {
             os.write_enum(2, self.tag.value())?;
         }
-        if let Some(ref v) = self.createTimestamp.as_ref() {
+        if let Some(ref v) = self.create_timestamp.as_ref() {
             os.write_tag(3, ::protobuf::wire_format::WireTypeLengthDelimited)?;
             os.write_raw_varint32(v.get_cached_size())?;
             v.write_to_with_cached_sizes(os)?;
@@ -855,9 +855,9 @@ impl ::protobuf::Message for ProcessTerminated {
                     |m: &mut ProcessTerminated| { &mut m.tag },
                 ));
                 fields.push(::protobuf::reflect::accessor::make_singular_ptr_field_accessor::<_, ::protobuf::types::ProtobufTypeMessage<::protobuf::well_known_types::Timestamp>>(
-                    "createTimestamp",
-                    |m: &ProcessTerminated| { &m.createTimestamp },
-                    |m: &mut ProcessTerminated| { &mut m.createTimestamp },
+                    "create_timestamp",
+                    |m: &ProcessTerminated| { &m.create_timestamp },
+                    |m: &mut ProcessTerminated| { &mut m.create_timestamp },
                 ));
                 ::protobuf::reflect::MessageDescriptor::new::<ProcessTerminated>(
                     "ProcessTerminated",
@@ -883,7 +883,7 @@ impl ::protobuf::Clear for ProcessTerminated {
     fn clear(&mut self) {
         self.info.clear();
         self.tag = ProcessTag::WORKER;
-        self.createTimestamp.clear();
+        self.create_timestamp.clear();
         self.unknown_fields.clear();
     }
 }
@@ -905,7 +905,7 @@ pub struct ProcessCompleted {
     // message fields
     pub info: ::protobuf::SingularPtrField<ProcessInfo>,
     pub tag: ProcessTag,
-    pub createTimestamp: ::protobuf::SingularPtrField<::protobuf::well_known_types::Timestamp>,
+    pub create_timestamp: ::protobuf::SingularPtrField<::protobuf::well_known_types::Timestamp>,
     // special fields
     pub unknown_fields: ::protobuf::UnknownFields,
     pub cached_size: ::protobuf::CachedSize,
@@ -922,7 +922,7 @@ impl ProcessCompleted {
         ::std::default::Default::default()
     }
 
-    // .ProcessInfo info = 1;
+    // .capataz.events.ProcessInfo info = 1;
 
 
     pub fn get_info(&self) -> &ProcessInfo {
@@ -955,7 +955,7 @@ impl ProcessCompleted {
         self.info.take().unwrap_or_else(|| ProcessInfo::new())
     }
 
-    // .ProcessTag tag = 2;
+    // .capataz.events.ProcessTag tag = 2;
 
 
     pub fn get_tag(&self) -> ProcessTag {
@@ -970,37 +970,37 @@ impl ProcessCompleted {
         self.tag = v;
     }
 
-    // .google.protobuf.Timestamp createTimestamp = 3;
+    // .google.protobuf.Timestamp create_timestamp = 3;
 
 
-    pub fn get_createTimestamp(&self) -> &::protobuf::well_known_types::Timestamp {
-        self.createTimestamp.as_ref().unwrap_or_else(|| ::protobuf::well_known_types::Timestamp::default_instance())
+    pub fn get_create_timestamp(&self) -> &::protobuf::well_known_types::Timestamp {
+        self.create_timestamp.as_ref().unwrap_or_else(|| ::protobuf::well_known_types::Timestamp::default_instance())
     }
-    pub fn clear_createTimestamp(&mut self) {
-        self.createTimestamp.clear();
+    pub fn clear_create_timestamp(&mut self) {
+        self.create_timestamp.clear();
     }
 
-    pub fn has_createTimestamp(&self) -> bool {
-        self.createTimestamp.is_some()
+    pub fn has_create_timestamp(&self) -> bool {
+        self.create_timestamp.is_some()
     }
 
     // Param is passed by value, moved
-    pub fn set_createTimestamp(&mut self, v: ::protobuf::well_known_types::Timestamp) {
-        self.createTimestamp = ::protobuf::SingularPtrField::some(v);
+    pub fn set_create_timestamp(&mut self, v: ::protobuf::well_known_types::Timestamp) {
+        self.create_timestamp = ::protobuf::SingularPtrField::some(v);
     }
 
     // Mutable pointer to the field.
     // If field is not initialized, it is initialized with default value first.
-    pub fn mut_createTimestamp(&mut self) -> &mut ::protobuf::well_known_types::Timestamp {
-        if self.createTimestamp.is_none() {
-            self.createTimestamp.set_default();
+    pub fn mut_create_timestamp(&mut self) -> &mut ::protobuf::well_known_types::Timestamp {
+        if self.create_timestamp.is_none() {
+            self.create_timestamp.set_default();
         }
-        self.createTimestamp.as_mut().unwrap()
+        self.create_timestamp.as_mut().unwrap()
     }
 
     // Take field
-    pub fn take_createTimestamp(&mut self) -> ::protobuf::well_known_types::Timestamp {
-        self.createTimestamp.take().unwrap_or_else(|| ::protobuf::well_known_types::Timestamp::new())
+    pub fn take_create_timestamp(&mut self) -> ::protobuf::well_known_types::Timestamp {
+        self.create_timestamp.take().unwrap_or_else(|| ::protobuf::well_known_types::Timestamp::new())
     }
 }
 
@@ -1011,7 +1011,7 @@ impl ::protobuf::Message for ProcessCompleted {
                 return false;
             }
         };
-        for v in &self.createTimestamp {
+        for v in &self.create_timestamp {
             if !v.is_initialized() {
                 return false;
             }
@@ -1030,7 +1030,7 @@ impl ::protobuf::Message for ProcessCompleted {
                     ::protobuf::rt::read_proto3_enum_with_unknown_fields_into(wire_type, is, &mut self.tag, 2, &mut self.unknown_fields)?
                 },
                 3 => {
-                    ::protobuf::rt::read_singular_message_into(wire_type, is, &mut self.createTimestamp)?;
+                    ::protobuf::rt::read_singular_message_into(wire_type, is, &mut self.create_timestamp)?;
                 },
                 _ => {
                     ::protobuf::rt::read_unknown_or_skip_group(field_number, wire_type, is, self.mut_unknown_fields())?;
@@ -1051,7 +1051,7 @@ impl ::protobuf::Message for ProcessCompleted {
         if self.tag != ProcessTag::WORKER {
             my_size += ::protobuf::rt::enum_size(2, self.tag);
         }
-        if let Some(ref v) = self.createTimestamp.as_ref() {
+        if let Some(ref v) = self.create_timestamp.as_ref() {
             let len = v.compute_size();
             my_size += 1 + ::protobuf::rt::compute_raw_varint32_size(len) + len;
         }
@@ -1069,7 +1069,7 @@ impl ::protobuf::Message for ProcessCompleted {
         if self.tag != ProcessTag::WORKER {
             os.write_enum(2, self.tag.value())?;
         }
-        if let Some(ref v) = self.createTimestamp.as_ref() {
+        if let Some(ref v) = self.create_timestamp.as_ref() {
             os.write_tag(3, ::protobuf::wire_format::WireTypeLengthDelimited)?;
             os.write_raw_varint32(v.get_cached_size())?;
             v.write_to_with_cached_sizes(os)?;
@@ -1127,9 +1127,9 @@ impl ::protobuf::Message for ProcessCompleted {
                     |m: &mut ProcessCompleted| { &mut m.tag },
                 ));
                 fields.push(::protobuf::reflect::accessor::make_singular_ptr_field_accessor::<_, ::protobuf::types::ProtobufTypeMessage<::protobuf::well_known_types::Timestamp>>(
-                    "createTimestamp",
-                    |m: &ProcessCompleted| { &m.createTimestamp },
-                    |m: &mut ProcessCompleted| { &mut m.createTimestamp },
+                    "create_timestamp",
+                    |m: &ProcessCompleted| { &m.create_timestamp },
+                    |m: &mut ProcessCompleted| { &mut m.create_timestamp },
                 ));
                 ::protobuf::reflect::MessageDescriptor::new::<ProcessCompleted>(
                     "ProcessCompleted",
@@ -1155,7 +1155,7 @@ impl ::protobuf::Clear for ProcessCompleted {
     fn clear(&mut self) {
         self.info.clear();
         self.tag = ProcessTag::WORKER;
-        self.createTimestamp.clear();
+        self.create_timestamp.clear();
         self.unknown_fields.clear();
     }
 }
@@ -1178,7 +1178,7 @@ pub struct ProcessFailed {
     pub info: ::protobuf::SingularPtrField<ProcessInfo>,
     pub tag: ProcessTag,
     pub error: ::std::string::String,
-    pub createTimestamp: ::protobuf::SingularPtrField<::protobuf::well_known_types::Timestamp>,
+    pub create_timestamp: ::protobuf::SingularPtrField<::protobuf::well_known_types::Timestamp>,
     // special fields
     pub unknown_fields: ::protobuf::UnknownFields,
     pub cached_size: ::protobuf::CachedSize,
@@ -1195,7 +1195,7 @@ impl ProcessFailed {
         ::std::default::Default::default()
     }
 
-    // .ProcessInfo info = 1;
+    // .capataz.events.ProcessInfo info = 1;
 
 
     pub fn get_info(&self) -> &ProcessInfo {
@@ -1228,7 +1228,7 @@ impl ProcessFailed {
         self.info.take().unwrap_or_else(|| ProcessInfo::new())
     }
 
-    // .ProcessTag tag = 2;
+    // .capataz.events.ProcessTag tag = 2;
 
 
     pub fn get_tag(&self) -> ProcessTag {
@@ -1269,37 +1269,37 @@ impl ProcessFailed {
         ::std::mem::replace(&mut self.error, ::std::string::String::new())
     }
 
-    // .google.protobuf.Timestamp createTimestamp = 4;
+    // .google.protobuf.Timestamp create_timestamp = 4;
 
 
-    pub fn get_createTimestamp(&self) -> &::protobuf::well_known_types::Timestamp {
-        self.createTimestamp.as_ref().unwrap_or_else(|| ::protobuf::well_known_types::Timestamp::default_instance())
+    pub fn get_create_timestamp(&self) -> &::protobuf::well_known_types::Timestamp {
+        self.create_timestamp.as_ref().unwrap_or_else(|| ::protobuf::well_known_types::Timestamp::default_instance())
     }
-    pub fn clear_createTimestamp(&mut self) {
-        self.createTimestamp.clear();
+    pub fn clear_create_timestamp(&mut self) {
+        self.create_timestamp.clear();
     }
 
-    pub fn has_createTimestamp(&self) -> bool {
-        self.createTimestamp.is_some()
+    pub fn has_create_timestamp(&self) -> bool {
+        self.create_timestamp.is_some()
     }
 
     // Param is passed by value, moved
-    pub fn set_createTimestamp(&mut self, v: ::protobuf::well_known_types::Timestamp) {
-        self.createTimestamp = ::protobuf::SingularPtrField::some(v);
+    pub fn set_create_timestamp(&mut self, v: ::protobuf::well_known_types::Timestamp) {
+        self.create_timestamp = ::protobuf::SingularPtrField::some(v);
     }
 
     // Mutable pointer to the field.
     // If field is not initialized, it is initialized with default value first.
-    pub fn mut_createTimestamp(&mut self) -> &mut ::protobuf::well_known_types::Timestamp {
-        if self.createTimestamp.is_none() {
-            self.createTimestamp.set_default();
+    pub fn mut_create_timestamp(&mut self) -> &mut ::protobuf::well_known_types::Timestamp {
+        if self.create_timestamp.is_none() {
+            self.create_timestamp.set_default();
         }
-        self.createTimestamp.as_mut().unwrap()
+        self.create_timestamp.as_mut().unwrap()
     }
 
     // Take field
-    pub fn take_createTimestamp(&mut self) -> ::protobuf::well_known_types::Timestamp {
-        self.createTimestamp.take().unwrap_or_else(|| ::protobuf::well_known_types::Timestamp::new())
+    pub fn take_create_timestamp(&mut self) -> ::protobuf::well_known_types::Timestamp {
+        self.create_timestamp.take().unwrap_or_else(|| ::protobuf::well_known_types::Timestamp::new())
     }
 }
 
@@ -1310,7 +1310,7 @@ impl ::protobuf::Message for ProcessFailed {
                 return false;
             }
         };
-        for v in &self.createTimestamp {
+        for v in &self.create_timestamp {
             if !v.is_initialized() {
                 return false;
             }
@@ -1332,7 +1332,7 @@ impl ::protobuf::Message for ProcessFailed {
                     ::protobuf::rt::read_singular_proto3_string_into(wire_type, is, &mut self.error)?;
                 },
                 4 => {
-                    ::protobuf::rt::read_singular_message_into(wire_type, is, &mut self.createTimestamp)?;
+                    ::protobuf::rt::read_singular_message_into(wire_type, is, &mut self.create_timestamp)?;
                 },
                 _ => {
                     ::protobuf::rt::read_unknown_or_skip_group(field_number, wire_type, is, self.mut_unknown_fields())?;
@@ -1356,7 +1356,7 @@ impl ::protobuf::Message for ProcessFailed {
         if !self.error.is_empty() {
             my_size += ::protobuf::rt::string_size(3, &self.error);
         }
-        if let Some(ref v) = self.createTimestamp.as_ref() {
+        if let Some(ref v) = self.create_timestamp.as_ref() {
             let len = v.compute_size();
             my_size += 1 + ::protobuf::rt::compute_raw_varint32_size(len) + len;
         }
@@ -1377,7 +1377,7 @@ impl ::protobuf::Message for ProcessFailed {
         if !self.error.is_empty() {
             os.write_string(3, &self.error)?;
         }
-        if let Some(ref v) = self.createTimestamp.as_ref() {
+        if let Some(ref v) = self.create_timestamp.as_ref() {
             os.write_tag(4, ::protobuf::wire_format::WireTypeLengthDelimited)?;
             os.write_raw_varint32(v.get_cached_size())?;
             v.write_to_with_cached_sizes(os)?;
@@ -1440,9 +1440,9 @@ impl ::protobuf::Message for ProcessFailed {
                     |m: &mut ProcessFailed| { &mut m.error },
                 ));
                 fields.push(::protobuf::reflect::accessor::make_singular_ptr_field_accessor::<_, ::protobuf::types::ProtobufTypeMessage<::protobuf::well_known_types::Timestamp>>(
-                    "createTimestamp",
-                    |m: &ProcessFailed| { &m.createTimestamp },
-                    |m: &mut ProcessFailed| { &mut m.createTimestamp },
+                    "create_timestamp",
+                    |m: &ProcessFailed| { &m.create_timestamp },
+                    |m: &mut ProcessFailed| { &mut m.create_timestamp },
                 ));
                 ::protobuf::reflect::MessageDescriptor::new::<ProcessFailed>(
                     "ProcessFailed",
@@ -1469,7 +1469,7 @@ impl ::protobuf::Clear for ProcessFailed {
         self.info.clear();
         self.tag = ProcessTag::WORKER;
         self.error.clear();
-        self.createTimestamp.clear();
+        self.create_timestamp.clear();
         self.unknown_fields.clear();
     }
 }
@@ -1503,10 +1503,10 @@ impl<'a> ::std::default::Default for &'a ProcessEvent {
 
 #[derive(Clone,PartialEq,Debug)]
 pub enum ProcessEvent_oneof_payload {
-    processStarted(ProcessStarted),
-    processTerminated(ProcessTerminated),
-    processCompleted(ProcessCompleted),
-    processFailed(ProcessFailed),
+    process_started(ProcessStarted),
+    process_terminated(ProcessTerminated),
+    process_completed(ProcessCompleted),
+    process_failed(ProcessFailed),
 }
 
 impl ProcessEvent {
@@ -1514,48 +1514,48 @@ impl ProcessEvent {
         ::std::default::Default::default()
     }
 
-    // .ProcessStarted processStarted = 1;
+    // .capataz.events.ProcessStarted process_started = 1;
 
 
-    pub fn get_processStarted(&self) -> &ProcessStarted {
+    pub fn get_process_started(&self) -> &ProcessStarted {
         match self.payload {
-            ::std::option::Option::Some(ProcessEvent_oneof_payload::processStarted(ref v)) => v,
+            ::std::option::Option::Some(ProcessEvent_oneof_payload::process_started(ref v)) => v,
             _ => ProcessStarted::default_instance(),
         }
     }
-    pub fn clear_processStarted(&mut self) {
+    pub fn clear_process_started(&mut self) {
         self.payload = ::std::option::Option::None;
     }
 
-    pub fn has_processStarted(&self) -> bool {
+    pub fn has_process_started(&self) -> bool {
         match self.payload {
-            ::std::option::Option::Some(ProcessEvent_oneof_payload::processStarted(..)) => true,
+            ::std::option::Option::Some(ProcessEvent_oneof_payload::process_started(..)) => true,
             _ => false,
         }
     }
 
     // Param is passed by value, moved
-    pub fn set_processStarted(&mut self, v: ProcessStarted) {
-        self.payload = ::std::option::Option::Some(ProcessEvent_oneof_payload::processStarted(v))
+    pub fn set_process_started(&mut self, v: ProcessStarted) {
+        self.payload = ::std::option::Option::Some(ProcessEvent_oneof_payload::process_started(v))
     }
 
     // Mutable pointer to the field.
-    pub fn mut_processStarted(&mut self) -> &mut ProcessStarted {
-        if let ::std::option::Option::Some(ProcessEvent_oneof_payload::processStarted(_)) = self.payload {
+    pub fn mut_process_started(&mut self) -> &mut ProcessStarted {
+        if let ::std::option::Option::Some(ProcessEvent_oneof_payload::process_started(_)) = self.payload {
         } else {
-            self.payload = ::std::option::Option::Some(ProcessEvent_oneof_payload::processStarted(ProcessStarted::new()));
+            self.payload = ::std::option::Option::Some(ProcessEvent_oneof_payload::process_started(ProcessStarted::new()));
         }
         match self.payload {
-            ::std::option::Option::Some(ProcessEvent_oneof_payload::processStarted(ref mut v)) => v,
+            ::std::option::Option::Some(ProcessEvent_oneof_payload::process_started(ref mut v)) => v,
             _ => panic!(),
         }
     }
 
     // Take field
-    pub fn take_processStarted(&mut self) -> ProcessStarted {
-        if self.has_processStarted() {
+    pub fn take_process_started(&mut self) -> ProcessStarted {
+        if self.has_process_started() {
             match self.payload.take() {
-                ::std::option::Option::Some(ProcessEvent_oneof_payload::processStarted(v)) => v,
+                ::std::option::Option::Some(ProcessEvent_oneof_payload::process_started(v)) => v,
                 _ => panic!(),
             }
         } else {
@@ -1563,48 +1563,48 @@ impl ProcessEvent {
         }
     }
 
-    // .ProcessTerminated processTerminated = 2;
+    // .capataz.events.ProcessTerminated process_terminated = 2;
 
 
-    pub fn get_processTerminated(&self) -> &ProcessTerminated {
+    pub fn get_process_terminated(&self) -> &ProcessTerminated {
         match self.payload {
-            ::std::option::Option::Some(ProcessEvent_oneof_payload::processTerminated(ref v)) => v,
+            ::std::option::Option::Some(ProcessEvent_oneof_payload::process_terminated(ref v)) => v,
             _ => ProcessTerminated::default_instance(),
         }
     }
-    pub fn clear_processTerminated(&mut self) {
+    pub fn clear_process_terminated(&mut self) {
         self.payload = ::std::option::Option::None;
     }
 
-    pub fn has_processTerminated(&self) -> bool {
+    pub fn has_process_terminated(&self) -> bool {
         match self.payload {
-            ::std::option::Option::Some(ProcessEvent_oneof_payload::processTerminated(..)) => true,
+            ::std::option::Option::Some(ProcessEvent_oneof_payload::process_terminated(..)) => true,
             _ => false,
         }
     }
 
     // Param is passed by value, moved
-    pub fn set_processTerminated(&mut self, v: ProcessTerminated) {
-        self.payload = ::std::option::Option::Some(ProcessEvent_oneof_payload::processTerminated(v))
+    pub fn set_process_terminated(&mut self, v: ProcessTerminated) {
+        self.payload = ::std::option::Option::Some(ProcessEvent_oneof_payload::process_terminated(v))
     }
 
     // Mutable pointer to the field.
-    pub fn mut_processTerminated(&mut self) -> &mut ProcessTerminated {
-        if let ::std::option::Option::Some(ProcessEvent_oneof_payload::processTerminated(_)) = self.payload {
+    pub fn mut_process_terminated(&mut self) -> &mut ProcessTerminated {
+        if let ::std::option::Option::Some(ProcessEvent_oneof_payload::process_terminated(_)) = self.payload {
         } else {
-            self.payload = ::std::option::Option::Some(ProcessEvent_oneof_payload::processTerminated(ProcessTerminated::new()));
+            self.payload = ::std::option::Option::Some(ProcessEvent_oneof_payload::process_terminated(ProcessTerminated::new()));
         }
         match self.payload {
-            ::std::option::Option::Some(ProcessEvent_oneof_payload::processTerminated(ref mut v)) => v,
+            ::std::option::Option::Some(ProcessEvent_oneof_payload::process_terminated(ref mut v)) => v,
             _ => panic!(),
         }
     }
 
     // Take field
-    pub fn take_processTerminated(&mut self) -> ProcessTerminated {
-        if self.has_processTerminated() {
+    pub fn take_process_terminated(&mut self) -> ProcessTerminated {
+        if self.has_process_terminated() {
             match self.payload.take() {
-                ::std::option::Option::Some(ProcessEvent_oneof_payload::processTerminated(v)) => v,
+                ::std::option::Option::Some(ProcessEvent_oneof_payload::process_terminated(v)) => v,
                 _ => panic!(),
             }
         } else {
@@ -1612,48 +1612,48 @@ impl ProcessEvent {
         }
     }
 
-    // .ProcessCompleted processCompleted = 3;
+    // .capataz.events.ProcessCompleted process_completed = 3;
 
 
-    pub fn get_processCompleted(&self) -> &ProcessCompleted {
+    pub fn get_process_completed(&self) -> &ProcessCompleted {
         match self.payload {
-            ::std::option::Option::Some(ProcessEvent_oneof_payload::processCompleted(ref v)) => v,
+            ::std::option::Option::Some(ProcessEvent_oneof_payload::process_completed(ref v)) => v,
             _ => ProcessCompleted::default_instance(),
         }
     }
-    pub fn clear_processCompleted(&mut self) {
+    pub fn clear_process_completed(&mut self) {
         self.payload = ::std::option::Option::None;
     }
 
-    pub fn has_processCompleted(&self) -> bool {
+    pub fn has_process_completed(&self) -> bool {
         match self.payload {
-            ::std::option::Option::Some(ProcessEvent_oneof_payload::processCompleted(..)) => true,
+            ::std::option::Option::Some(ProcessEvent_oneof_payload::process_completed(..)) => true,
             _ => false,
         }
     }
 
     // Param is passed by value, moved
-    pub fn set_processCompleted(&mut self, v: ProcessCompleted) {
-        self.payload = ::std::option::Option::Some(ProcessEvent_oneof_payload::processCompleted(v))
+    pub fn set_process_completed(&mut self, v: ProcessCompleted) {
+        self.payload = ::std::option::Option::Some(ProcessEvent_oneof_payload::process_completed(v))
     }
 
     // Mutable pointer to the field.
-    pub fn mut_processCompleted(&mut self) -> &mut ProcessCompleted {
-        if let ::std::option::Option::Some(ProcessEvent_oneof_payload::processCompleted(_)) = self.payload {
+    pub fn mut_process_completed(&mut self) -> &mut ProcessCompleted {
+        if let ::std::option::Option::Some(ProcessEvent_oneof_payload::process_completed(_)) = self.payload {
         } else {
-            self.payload = ::std::option::Option::Some(ProcessEvent_oneof_payload::processCompleted(ProcessCompleted::new()));
+            self.payload = ::std::option::Option::Some(ProcessEvent_oneof_payload::process_completed(ProcessCompleted::new()));
         }
         match self.payload {
-            ::std::option::Option::Some(ProcessEvent_oneof_payload::processCompleted(ref mut v)) => v,
+            ::std::option::Option::Some(ProcessEvent_oneof_payload::process_completed(ref mut v)) => v,
             _ => panic!(),
         }
     }
 
     // Take field
-    pub fn take_processCompleted(&mut self) -> ProcessCompleted {
-        if self.has_processCompleted() {
+    pub fn take_process_completed(&mut self) -> ProcessCompleted {
+        if self.has_process_completed() {
             match self.payload.take() {
-                ::std::option::Option::Some(ProcessEvent_oneof_payload::processCompleted(v)) => v,
+                ::std::option::Option::Some(ProcessEvent_oneof_payload::process_completed(v)) => v,
                 _ => panic!(),
             }
         } else {
@@ -1661,48 +1661,48 @@ impl ProcessEvent {
         }
     }
 
-    // .ProcessFailed processFailed = 4;
+    // .capataz.events.ProcessFailed process_failed = 4;
 
 
-    pub fn get_processFailed(&self) -> &ProcessFailed {
+    pub fn get_process_failed(&self) -> &ProcessFailed {
         match self.payload {
-            ::std::option::Option::Some(ProcessEvent_oneof_payload::processFailed(ref v)) => v,
+            ::std::option::Option::Some(ProcessEvent_oneof_payload::process_failed(ref v)) => v,
             _ => ProcessFailed::default_instance(),
         }
     }
-    pub fn clear_processFailed(&mut self) {
+    pub fn clear_process_failed(&mut self) {
         self.payload = ::std::option::Option::None;
     }
 
-    pub fn has_processFailed(&self) -> bool {
+    pub fn has_process_failed(&self) -> bool {
         match self.payload {
-            ::std::option::Option::Some(ProcessEvent_oneof_payload::processFailed(..)) => true,
+            ::std::option::Option::Some(ProcessEvent_oneof_payload::process_failed(..)) => true,
             _ => false,
         }
     }
 
     // Param is passed by value, moved
-    pub fn set_processFailed(&mut self, v: ProcessFailed) {
-        self.payload = ::std::option::Option::Some(ProcessEvent_oneof_payload::processFailed(v))
+    pub fn set_process_failed(&mut self, v: ProcessFailed) {
+        self.payload = ::std::option::Option::Some(ProcessEvent_oneof_payload::process_failed(v))
     }
 
     // Mutable pointer to the field.
-    pub fn mut_processFailed(&mut self) -> &mut ProcessFailed {
-        if let ::std::option::Option::Some(ProcessEvent_oneof_payload::processFailed(_)) = self.payload {
+    pub fn mut_process_failed(&mut self) -> &mut ProcessFailed {
+        if let ::std::option::Option::Some(ProcessEvent_oneof_payload::process_failed(_)) = self.payload {
         } else {
-            self.payload = ::std::option::Option::Some(ProcessEvent_oneof_payload::processFailed(ProcessFailed::new()));
+            self.payload = ::std::option::Option::Some(ProcessEvent_oneof_payload::process_failed(ProcessFailed::new()));
         }
         match self.payload {
-            ::std::option::Option::Some(ProcessEvent_oneof_payload::processFailed(ref mut v)) => v,
+            ::std::option::Option::Some(ProcessEvent_oneof_payload::process_failed(ref mut v)) => v,
             _ => panic!(),
         }
     }
 
     // Take field
-    pub fn take_processFailed(&mut self) -> ProcessFailed {
-        if self.has_processFailed() {
+    pub fn take_process_failed(&mut self) -> ProcessFailed {
+        if self.has_process_failed() {
             match self.payload.take() {
-                ::std::option::Option::Some(ProcessEvent_oneof_payload::processFailed(v)) => v,
+                ::std::option::Option::Some(ProcessEvent_oneof_payload::process_failed(v)) => v,
                 _ => panic!(),
             }
         } else {
@@ -1713,22 +1713,22 @@ impl ProcessEvent {
 
 impl ::protobuf::Message for ProcessEvent {
     fn is_initialized(&self) -> bool {
-        if let Some(ProcessEvent_oneof_payload::processStarted(ref v)) = self.payload {
+        if let Some(ProcessEvent_oneof_payload::process_started(ref v)) = self.payload {
             if !v.is_initialized() {
                 return false;
             }
         }
-        if let Some(ProcessEvent_oneof_payload::processTerminated(ref v)) = self.payload {
+        if let Some(ProcessEvent_oneof_payload::process_terminated(ref v)) = self.payload {
             if !v.is_initialized() {
                 return false;
             }
         }
-        if let Some(ProcessEvent_oneof_payload::processCompleted(ref v)) = self.payload {
+        if let Some(ProcessEvent_oneof_payload::process_completed(ref v)) = self.payload {
             if !v.is_initialized() {
                 return false;
             }
         }
-        if let Some(ProcessEvent_oneof_payload::processFailed(ref v)) = self.payload {
+        if let Some(ProcessEvent_oneof_payload::process_failed(ref v)) = self.payload {
             if !v.is_initialized() {
                 return false;
             }
@@ -1744,25 +1744,25 @@ impl ::protobuf::Message for ProcessEvent {
                     if wire_type != ::protobuf::wire_format::WireTypeLengthDelimited {
                         return ::std::result::Result::Err(::protobuf::rt::unexpected_wire_type(wire_type));
                     }
-                    self.payload = ::std::option::Option::Some(ProcessEvent_oneof_payload::processStarted(is.read_message()?));
+                    self.payload = ::std::option::Option::Some(ProcessEvent_oneof_payload::process_started(is.read_message()?));
                 },
                 2 => {
                     if wire_type != ::protobuf::wire_format::WireTypeLengthDelimited {
                         return ::std::result::Result::Err(::protobuf::rt::unexpected_wire_type(wire_type));
                     }
-                    self.payload = ::std::option::Option::Some(ProcessEvent_oneof_payload::processTerminated(is.read_message()?));
+                    self.payload = ::std::option::Option::Some(ProcessEvent_oneof_payload::process_terminated(is.read_message()?));
                 },
                 3 => {
                     if wire_type != ::protobuf::wire_format::WireTypeLengthDelimited {
                         return ::std::result::Result::Err(::protobuf::rt::unexpected_wire_type(wire_type));
                     }
-                    self.payload = ::std::option::Option::Some(ProcessEvent_oneof_payload::processCompleted(is.read_message()?));
+                    self.payload = ::std::option::Option::Some(ProcessEvent_oneof_payload::process_completed(is.read_message()?));
                 },
                 4 => {
                     if wire_type != ::protobuf::wire_format::WireTypeLengthDelimited {
                         return ::std::result::Result::Err(::protobuf::rt::unexpected_wire_type(wire_type));
                     }
-                    self.payload = ::std::option::Option::Some(ProcessEvent_oneof_payload::processFailed(is.read_message()?));
+                    self.payload = ::std::option::Option::Some(ProcessEvent_oneof_payload::process_failed(is.read_message()?));
                 },
                 _ => {
                     ::protobuf::rt::read_unknown_or_skip_group(field_number, wire_type, is, self.mut_unknown_fields())?;
@@ -1778,19 +1778,19 @@ impl ::protobuf::Message for ProcessEvent {
         let mut my_size = 0;
         if let ::std::option::Option::Some(ref v) = self.payload {
             match v {
-                &ProcessEvent_oneof_payload::processStarted(ref v) => {
+                &ProcessEvent_oneof_payload::process_started(ref v) => {
                     let len = v.compute_size();
                     my_size += 1 + ::protobuf::rt::compute_raw_varint32_size(len) + len;
                 },
-                &ProcessEvent_oneof_payload::processTerminated(ref v) => {
+                &ProcessEvent_oneof_payload::process_terminated(ref v) => {
                     let len = v.compute_size();
                     my_size += 1 + ::protobuf::rt::compute_raw_varint32_size(len) + len;
                 },
-                &ProcessEvent_oneof_payload::processCompleted(ref v) => {
+                &ProcessEvent_oneof_payload::process_completed(ref v) => {
                     let len = v.compute_size();
                     my_size += 1 + ::protobuf::rt::compute_raw_varint32_size(len) + len;
                 },
-                &ProcessEvent_oneof_payload::processFailed(ref v) => {
+                &ProcessEvent_oneof_payload::process_failed(ref v) => {
                     let len = v.compute_size();
                     my_size += 1 + ::protobuf::rt::compute_raw_varint32_size(len) + len;
                 },
@@ -1804,22 +1804,22 @@ impl ::protobuf::Message for ProcessEvent {
     fn write_to_with_cached_sizes(&self, os: &mut ::protobuf::CodedOutputStream) -> ::protobuf::ProtobufResult<()> {
         if let ::std::option::Option::Some(ref v) = self.payload {
             match v {
-                &ProcessEvent_oneof_payload::processStarted(ref v) => {
+                &ProcessEvent_oneof_payload::process_started(ref v) => {
                     os.write_tag(1, ::protobuf::wire_format::WireTypeLengthDelimited)?;
                     os.write_raw_varint32(v.get_cached_size())?;
                     v.write_to_with_cached_sizes(os)?;
                 },
-                &ProcessEvent_oneof_payload::processTerminated(ref v) => {
+                &ProcessEvent_oneof_payload::process_terminated(ref v) => {
                     os.write_tag(2, ::protobuf::wire_format::WireTypeLengthDelimited)?;
                     os.write_raw_varint32(v.get_cached_size())?;
                     v.write_to_with_cached_sizes(os)?;
                 },
-                &ProcessEvent_oneof_payload::processCompleted(ref v) => {
+                &ProcessEvent_oneof_payload::process_completed(ref v) => {
                     os.write_tag(3, ::protobuf::wire_format::WireTypeLengthDelimited)?;
                     os.write_raw_varint32(v.get_cached_size())?;
                     v.write_to_with_cached_sizes(os)?;
                 },
-                &ProcessEvent_oneof_payload::processFailed(ref v) => {
+                &ProcessEvent_oneof_payload::process_failed(ref v) => {
                     os.write_tag(4, ::protobuf::wire_format::WireTypeLengthDelimited)?;
                     os.write_raw_varint32(v.get_cached_size())?;
                     v.write_to_with_cached_sizes(os)?;
@@ -1869,24 +1869,24 @@ impl ::protobuf::Message for ProcessEvent {
             descriptor.get(|| {
                 let mut fields = ::std::vec::Vec::new();
                 fields.push(::protobuf::reflect::accessor::make_singular_message_accessor::<_, ProcessStarted>(
-                    "processStarted",
-                    ProcessEvent::has_processStarted,
-                    ProcessEvent::get_processStarted,
+                    "process_started",
+                    ProcessEvent::has_process_started,
+                    ProcessEvent::get_process_started,
                 ));
                 fields.push(::protobuf::reflect::accessor::make_singular_message_accessor::<_, ProcessTerminated>(
-                    "processTerminated",
-                    ProcessEvent::has_processTerminated,
-                    ProcessEvent::get_processTerminated,
+                    "process_terminated",
+                    ProcessEvent::has_process_terminated,
+                    ProcessEvent::get_process_terminated,
                 ));
                 fields.push(::protobuf::reflect::accessor::make_singular_message_accessor::<_, ProcessCompleted>(
-                    "processCompleted",
-                    ProcessEvent::has_processCompleted,
-                    ProcessEvent::get_processCompleted,
+                    "process_completed",
+                    ProcessEvent::has_process_completed,
+                    ProcessEvent::get_process_completed,
                 ));
                 fields.push(::protobuf::reflect::accessor::make_singular_message_accessor::<_, ProcessFailed>(
-                    "processFailed",
-                    ProcessEvent::has_processFailed,
-                    ProcessEvent::get_processFailed,
+                    "process_failed",
+                    ProcessEvent::has_process_failed,
+                    ProcessEvent::get_process_failed,
                 ));
                 ::protobuf::reflect::MessageDescriptor::new::<ProcessEvent>(
                     "ProcessEvent",
@@ -1950,7 +1950,7 @@ impl EventBundle {
         ::std::default::Default::default()
     }
 
-    // repeated .ProcessEvent events = 1;
+    // repeated .capataz.events.ProcessEvent events = 1;
 
 
     pub fn get_events(&self) -> &[ProcessEvent] {
@@ -2162,125 +2162,128 @@ impl ::protobuf::reflect::ProtobufValue for ProcessTag {
 }
 
 static file_descriptor_proto_data: &'static [u8] = b"\
-    \n\x12proto/events.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"_\n\x0b\
-    ProcessInfo\x12\x18\n\x07eventId\x18\x01\x20\x01(\tR\x07eventId\x12\x1a\
-    \n\x08workerId\x18\x02\x20\x01(\tR\x08workerId\x12\x1a\n\x08parentId\x18\
-    \x03\x20\x01(\tR\x08parentId\"\xf1\x01\n\x0eProcessStarted\x12\x20\n\x04\
-    info\x18\x01\x20\x01(\x0b2\x0c.ProcessInfoR\x04info\x12\x1d\n\x03tag\x18\
-    \x02\x20\x01(\x0e2\x0b.ProcessTagR\x03tag\x12D\n\x0fcreateTimestamp\x18\
-    \x03\x20\x01(\x0b2\x1a.google.protobuf.TimestampR\x0fcreateTimestamp\x12\
-    4\n\x15firstRestartTimestamp\x18\x04\x20\x01(\tR\x15firstRestartTimestam\
-    p\x12\"\n\x0crestartCount\x18\x05\x20\x01(\rR\x0crestartCount\"\x9a\x01\
-    \n\x11ProcessTerminated\x12\x20\n\x04info\x18\x01\x20\x01(\x0b2\x0c.Proc\
-    essInfoR\x04info\x12\x1d\n\x03tag\x18\x02\x20\x01(\x0e2\x0b.ProcessTagR\
-    \x03tag\x12D\n\x0fcreateTimestamp\x18\x03\x20\x01(\x0b2\x1a.google.proto\
-    buf.TimestampR\x0fcreateTimestamp\"\x99\x01\n\x10ProcessCompleted\x12\
-    \x20\n\x04info\x18\x01\x20\x01(\x0b2\x0c.ProcessInfoR\x04info\x12\x1d\n\
-    \x03tag\x18\x02\x20\x01(\x0e2\x0b.ProcessTagR\x03tag\x12D\n\x0fcreateTim\
-    estamp\x18\x03\x20\x01(\x0b2\x1a.google.protobuf.TimestampR\x0fcreateTim\
-    estamp\"\xac\x01\n\rProcessFailed\x12\x20\n\x04info\x18\x01\x20\x01(\x0b\
-    2\x0c.ProcessInfoR\x04info\x12\x1d\n\x03tag\x18\x02\x20\x01(\x0e2\x0b.Pr\
-    ocessTagR\x03tag\x12\x14\n\x05error\x18\x03\x20\x01(\tR\x05error\x12D\n\
-    \x0fcreateTimestamp\x18\x04\x20\x01(\x0b2\x1a.google.protobuf.TimestampR\
-    \x0fcreateTimestamp\"\x91\x02\n\x0cProcessEvent\x129\n\x0eprocessStarted\
-    \x18\x01\x20\x01(\x0b2\x0f.ProcessStartedH\0R\x0eprocessStarted\x12B\n\
-    \x11processTerminated\x18\x02\x20\x01(\x0b2\x12.ProcessTerminatedH\0R\
-    \x11processTerminated\x12?\n\x10processCompleted\x18\x03\x20\x01(\x0b2\
-    \x11.ProcessCompletedH\0R\x10processCompleted\x126\n\rprocessFailed\x18\
-    \x04\x20\x01(\x0b2\x0e.ProcessFailedH\0R\rprocessFailedB\t\n\x07payload\
-    \"4\n\x0bEventBundle\x12%\n\x06events\x18\x01\x20\x03(\x0b2\r.ProcessEve\
-    ntR\x06events*(\n\nProcessTag\x12\n\n\x06WORKER\x10\0\x12\x0e\n\nSUPERVI\
-    SOR\x10\x01J\xd8\x0e\n\x06\x12\x04\0\05\x01\n\x08\n\x01\x0c\x12\x03\0\0\
-    \x12\n\t\n\x02\x03\0\x12\x03\x02\0)\n\n\n\x02\x05\0\x12\x04\x04\0\x07\
-    \x01\n\n\n\x03\x05\0\x01\x12\x03\x04\x05\x0f\n\x0b\n\x04\x05\0\x02\0\x12\
-    \x03\x05\x02\r\n\x0c\n\x05\x05\0\x02\0\x01\x12\x03\x05\x02\x08\n\x0c\n\
-    \x05\x05\0\x02\0\x02\x12\x03\x05\x0b\x0c\n\x0b\n\x04\x05\0\x02\x01\x12\
-    \x03\x06\x02\x11\n\x0c\n\x05\x05\0\x02\x01\x01\x12\x03\x06\x02\x0c\n\x0c\
-    \n\x05\x05\0\x02\x01\x02\x12\x03\x06\x0f\x10\n\n\n\x02\x04\0\x12\x04\t\0\
-    \r\x01\n\n\n\x03\x04\0\x01\x12\x03\t\x08\x13\n\x0b\n\x04\x04\0\x02\0\x12\
-    \x03\n\x02\x16\n\r\n\x05\x04\0\x02\0\x04\x12\x04\n\x02\t\x15\n\x0c\n\x05\
-    \x04\0\x02\0\x05\x12\x03\n\x02\x08\n\x0c\n\x05\x04\0\x02\0\x01\x12\x03\n\
-    \t\x10\n\x0c\n\x05\x04\0\x02\0\x03\x12\x03\n\x14\x15\n\x0b\n\x04\x04\0\
-    \x02\x01\x12\x03\x0b\x02\x16\n\r\n\x05\x04\0\x02\x01\x04\x12\x04\x0b\x02\
-    \n\x16\n\x0c\n\x05\x04\0\x02\x01\x05\x12\x03\x0b\x02\x08\n\x0c\n\x05\x04\
-    \0\x02\x01\x01\x12\x03\x0b\t\x11\n\x0c\n\x05\x04\0\x02\x01\x03\x12\x03\
-    \x0b\x14\x15\n\x0b\n\x04\x04\0\x02\x02\x12\x03\x0c\x02\x16\n\r\n\x05\x04\
-    \0\x02\x02\x04\x12\x04\x0c\x02\x0b\x16\n\x0c\n\x05\x04\0\x02\x02\x05\x12\
-    \x03\x0c\x02\x08\n\x0c\n\x05\x04\0\x02\x02\x01\x12\x03\x0c\t\x11\n\x0c\n\
-    \x05\x04\0\x02\x02\x03\x12\x03\x0c\x14\x15\n\n\n\x02\x04\x01\x12\x04\x0f\
-    \0\x15\x01\n\n\n\x03\x04\x01\x01\x12\x03\x0f\x08\x16\n\x0b\n\x04\x04\x01\
-    \x02\0\x12\x03\x10\x02\x17\n\r\n\x05\x04\x01\x02\0\x04\x12\x04\x10\x02\
-    \x0f\x18\n\x0c\n\x05\x04\x01\x02\0\x06\x12\x03\x10\x02\r\n\x0c\n\x05\x04\
-    \x01\x02\0\x01\x12\x03\x10\x0e\x12\n\x0c\n\x05\x04\x01\x02\0\x03\x12\x03\
-    \x10\x15\x16\n\x0b\n\x04\x04\x01\x02\x01\x12\x03\x11\x02\x15\n\r\n\x05\
-    \x04\x01\x02\x01\x04\x12\x04\x11\x02\x10\x17\n\x0c\n\x05\x04\x01\x02\x01\
-    \x06\x12\x03\x11\x02\x0c\n\x0c\n\x05\x04\x01\x02\x01\x01\x12\x03\x11\r\
-    \x10\n\x0c\n\x05\x04\x01\x02\x01\x03\x12\x03\x11\x13\x14\n\x0b\n\x04\x04\
-    \x01\x02\x02\x12\x03\x12\x020\n\r\n\x05\x04\x01\x02\x02\x04\x12\x04\x12\
-    \x02\x11\x15\n\x0c\n\x05\x04\x01\x02\x02\x06\x12\x03\x12\x02\x1b\n\x0c\n\
-    \x05\x04\x01\x02\x02\x01\x12\x03\x12\x1c+\n\x0c\n\x05\x04\x01\x02\x02\
-    \x03\x12\x03\x12./\n\x0b\n\x04\x04\x01\x02\x03\x12\x03\x13\x02#\n\r\n\
-    \x05\x04\x01\x02\x03\x04\x12\x04\x13\x02\x120\n\x0c\n\x05\x04\x01\x02\
-    \x03\x05\x12\x03\x13\x02\x08\n\x0c\n\x05\x04\x01\x02\x03\x01\x12\x03\x13\
-    \t\x1e\n\x0c\n\x05\x04\x01\x02\x03\x03\x12\x03\x13!\"\n\x0b\n\x04\x04\
-    \x01\x02\x04\x12\x03\x14\x02\x1a\n\r\n\x05\x04\x01\x02\x04\x04\x12\x04\
-    \x14\x02\x13#\n\x0c\n\x05\x04\x01\x02\x04\x05\x12\x03\x14\x02\x08\n\x0c\
-    \n\x05\x04\x01\x02\x04\x01\x12\x03\x14\t\x15\n\x0c\n\x05\x04\x01\x02\x04\
-    \x03\x12\x03\x14\x18\x19\n\n\n\x02\x04\x02\x12\x04\x17\0\x1b\x01\n\n\n\
-    \x03\x04\x02\x01\x12\x03\x17\x08\x19\n\x0b\n\x04\x04\x02\x02\0\x12\x03\
-    \x18\x02\x17\n\r\n\x05\x04\x02\x02\0\x04\x12\x04\x18\x02\x17\x1b\n\x0c\n\
-    \x05\x04\x02\x02\0\x06\x12\x03\x18\x02\r\n\x0c\n\x05\x04\x02\x02\0\x01\
-    \x12\x03\x18\x0e\x12\n\x0c\n\x05\x04\x02\x02\0\x03\x12\x03\x18\x15\x16\n\
-    \x0b\n\x04\x04\x02\x02\x01\x12\x03\x19\x02\x15\n\r\n\x05\x04\x02\x02\x01\
-    \x04\x12\x04\x19\x02\x18\x17\n\x0c\n\x05\x04\x02\x02\x01\x06\x12\x03\x19\
-    \x02\x0c\n\x0c\n\x05\x04\x02\x02\x01\x01\x12\x03\x19\r\x10\n\x0c\n\x05\
-    \x04\x02\x02\x01\x03\x12\x03\x19\x13\x14\n\x0b\n\x04\x04\x02\x02\x02\x12\
-    \x03\x1a\x020\n\r\n\x05\x04\x02\x02\x02\x04\x12\x04\x1a\x02\x19\x15\n\
-    \x0c\n\x05\x04\x02\x02\x02\x06\x12\x03\x1a\x02\x1b\n\x0c\n\x05\x04\x02\
-    \x02\x02\x01\x12\x03\x1a\x1c+\n\x0c\n\x05\x04\x02\x02\x02\x03\x12\x03\
-    \x1a./\n\n\n\x02\x04\x03\x12\x04\x1d\0!\x01\n\n\n\x03\x04\x03\x01\x12\
-    \x03\x1d\x08\x18\n\x0b\n\x04\x04\x03\x02\0\x12\x03\x1e\x02\x17\n\r\n\x05\
-    \x04\x03\x02\0\x04\x12\x04\x1e\x02\x1d\x1a\n\x0c\n\x05\x04\x03\x02\0\x06\
-    \x12\x03\x1e\x02\r\n\x0c\n\x05\x04\x03\x02\0\x01\x12\x03\x1e\x0e\x12\n\
-    \x0c\n\x05\x04\x03\x02\0\x03\x12\x03\x1e\x15\x16\n\x0b\n\x04\x04\x03\x02\
-    \x01\x12\x03\x1f\x02\x15\n\r\n\x05\x04\x03\x02\x01\x04\x12\x04\x1f\x02\
-    \x1e\x17\n\x0c\n\x05\x04\x03\x02\x01\x06\x12\x03\x1f\x02\x0c\n\x0c\n\x05\
-    \x04\x03\x02\x01\x01\x12\x03\x1f\r\x10\n\x0c\n\x05\x04\x03\x02\x01\x03\
-    \x12\x03\x1f\x13\x14\n\x0b\n\x04\x04\x03\x02\x02\x12\x03\x20\x020\n\r\n\
-    \x05\x04\x03\x02\x02\x04\x12\x04\x20\x02\x1f\x15\n\x0c\n\x05\x04\x03\x02\
-    \x02\x06\x12\x03\x20\x02\x1b\n\x0c\n\x05\x04\x03\x02\x02\x01\x12\x03\x20\
-    \x1c+\n\x0c\n\x05\x04\x03\x02\x02\x03\x12\x03\x20./\n\n\n\x02\x04\x04\
-    \x12\x04#\0(\x01\n\n\n\x03\x04\x04\x01\x12\x03#\x08\x15\n\x0b\n\x04\x04\
-    \x04\x02\0\x12\x03$\x02\x17\n\r\n\x05\x04\x04\x02\0\x04\x12\x04$\x02#\
-    \x17\n\x0c\n\x05\x04\x04\x02\0\x06\x12\x03$\x02\r\n\x0c\n\x05\x04\x04\
-    \x02\0\x01\x12\x03$\x0e\x12\n\x0c\n\x05\x04\x04\x02\0\x03\x12\x03$\x15\
-    \x16\n\x0b\n\x04\x04\x04\x02\x01\x12\x03%\x02\x15\n\r\n\x05\x04\x04\x02\
-    \x01\x04\x12\x04%\x02$\x17\n\x0c\n\x05\x04\x04\x02\x01\x06\x12\x03%\x02\
-    \x0c\n\x0c\n\x05\x04\x04\x02\x01\x01\x12\x03%\r\x10\n\x0c\n\x05\x04\x04\
-    \x02\x01\x03\x12\x03%\x13\x14\n\x0b\n\x04\x04\x04\x02\x02\x12\x03&\x02\
-    \x13\n\r\n\x05\x04\x04\x02\x02\x04\x12\x04&\x02%\x15\n\x0c\n\x05\x04\x04\
-    \x02\x02\x05\x12\x03&\x02\x08\n\x0c\n\x05\x04\x04\x02\x02\x01\x12\x03&\t\
-    \x0e\n\x0c\n\x05\x04\x04\x02\x02\x03\x12\x03&\x11\x12\n\x0b\n\x04\x04\
-    \x04\x02\x03\x12\x03'\x020\n\r\n\x05\x04\x04\x02\x03\x04\x12\x04'\x02&\
-    \x13\n\x0c\n\x05\x04\x04\x02\x03\x06\x12\x03'\x02\x1b\n\x0c\n\x05\x04\
-    \x04\x02\x03\x01\x12\x03'\x1c+\n\x0c\n\x05\x04\x04\x02\x03\x03\x12\x03'.\
-    /\n\n\n\x02\x04\x05\x12\x04*\01\x01\n\n\n\x03\x04\x05\x01\x12\x03*\x08\
-    \x14\n\x0c\n\x04\x04\x05\x08\0\x12\x04+\x020\x03\n\x0c\n\x05\x04\x05\x08\
-    \0\x01\x12\x03+\x08\x0f\n\x0b\n\x04\x04\x05\x02\0\x12\x03,\x04&\n\x0c\n\
-    \x05\x04\x05\x02\0\x06\x12\x03,\x04\x12\n\x0c\n\x05\x04\x05\x02\0\x01\
-    \x12\x03,\x13!\n\x0c\n\x05\x04\x05\x02\0\x03\x12\x03,$%\n\x0b\n\x04\x04\
-    \x05\x02\x01\x12\x03-\x04,\n\x0c\n\x05\x04\x05\x02\x01\x06\x12\x03-\x04\
-    \x15\n\x0c\n\x05\x04\x05\x02\x01\x01\x12\x03-\x16'\n\x0c\n\x05\x04\x05\
-    \x02\x01\x03\x12\x03-*+\n\x0b\n\x04\x04\x05\x02\x02\x12\x03.\x04*\n\x0c\
-    \n\x05\x04\x05\x02\x02\x06\x12\x03.\x04\x14\n\x0c\n\x05\x04\x05\x02\x02\
-    \x01\x12\x03.\x15%\n\x0c\n\x05\x04\x05\x02\x02\x03\x12\x03.()\n\x0b\n\
-    \x04\x04\x05\x02\x03\x12\x03/\x04$\n\x0c\n\x05\x04\x05\x02\x03\x06\x12\
-    \x03/\x04\x11\n\x0c\n\x05\x04\x05\x02\x03\x01\x12\x03/\x12\x1f\n\x0c\n\
-    \x05\x04\x05\x02\x03\x03\x12\x03/\"#\n\n\n\x02\x04\x06\x12\x043\05\x01\n\
-    \n\n\x03\x04\x06\x01\x12\x033\x08\x13\n\x0b\n\x04\x04\x06\x02\0\x12\x034\
-    \x02#\n\x0c\n\x05\x04\x06\x02\0\x04\x12\x034\x02\n\n\x0c\n\x05\x04\x06\
-    \x02\0\x06\x12\x034\x0b\x17\n\x0c\n\x05\x04\x06\x02\0\x01\x12\x034\x18\
-    \x1e\n\x0c\n\x05\x04\x06\x02\0\x03\x12\x034!\"b\x06proto3\
+    \n\x12proto/events.proto\x12\x0ecapataz.events\x1a\x1fgoogle/protobuf/ti\
+    mestamp.proto\"b\n\x0bProcessInfo\x12\x19\n\x08event_id\x18\x01\x20\x01(\
+    \tR\x07eventId\x12\x1b\n\tworker_id\x18\x02\x20\x01(\tR\x08workerId\x12\
+    \x1b\n\tparent_id\x18\x03\x20\x01(\tR\x08parentId\"\x93\x02\n\x0eProcess\
+    Started\x12/\n\x04info\x18\x01\x20\x01(\x0b2\x1b.capataz.events.ProcessI\
+    nfoR\x04info\x12,\n\x03tag\x18\x02\x20\x01(\x0e2\x1a.capataz.events.Proc\
+    essTagR\x03tag\x12E\n\x10create_timestamp\x18\x03\x20\x01(\x0b2\x1a.goog\
+    le.protobuf.TimestampR\x0fcreateTimestamp\x126\n\x17first_restart_timest\
+    amp\x18\x04\x20\x01(\tR\x15firstRestartTimestamp\x12#\n\rrestart_count\
+    \x18\x05\x20\x01(\rR\x0crestartCount\"\xb9\x01\n\x11ProcessTerminated\
+    \x12/\n\x04info\x18\x01\x20\x01(\x0b2\x1b.capataz.events.ProcessInfoR\
+    \x04info\x12,\n\x03tag\x18\x02\x20\x01(\x0e2\x1a.capataz.events.ProcessT\
+    agR\x03tag\x12E\n\x10create_timestamp\x18\x03\x20\x01(\x0b2\x1a.google.p\
+    rotobuf.TimestampR\x0fcreateTimestamp\"\xb8\x01\n\x10ProcessCompleted\
+    \x12/\n\x04info\x18\x01\x20\x01(\x0b2\x1b.capataz.events.ProcessInfoR\
+    \x04info\x12,\n\x03tag\x18\x02\x20\x01(\x0e2\x1a.capataz.events.ProcessT\
+    agR\x03tag\x12E\n\x10create_timestamp\x18\x03\x20\x01(\x0b2\x1a.google.p\
+    rotobuf.TimestampR\x0fcreateTimestamp\"\xcb\x01\n\rProcessFailed\x12/\n\
+    \x04info\x18\x01\x20\x01(\x0b2\x1b.capataz.events.ProcessInfoR\x04info\
+    \x12,\n\x03tag\x18\x02\x20\x01(\x0e2\x1a.capataz.events.ProcessTagR\x03t\
+    ag\x12\x14\n\x05error\x18\x03\x20\x01(\tR\x05error\x12E\n\x10create_time\
+    stamp\x18\x04\x20\x01(\x0b2\x1a.google.protobuf.TimestampR\x0fcreateTime\
+    stamp\"\xd1\x02\n\x0cProcessEvent\x12I\n\x0fprocess_started\x18\x01\x20\
+    \x01(\x0b2\x1e.capataz.events.ProcessStartedH\0R\x0eprocessStarted\x12R\
+    \n\x12process_terminated\x18\x02\x20\x01(\x0b2!.capataz.events.ProcessTe\
+    rminatedH\0R\x11processTerminated\x12O\n\x11process_completed\x18\x03\
+    \x20\x01(\x0b2\x20.capataz.events.ProcessCompletedH\0R\x10processComplet\
+    ed\x12F\n\x0eprocess_failed\x18\x04\x20\x01(\x0b2\x1d.capataz.events.Pro\
+    cessFailedH\0R\rprocessFailedB\t\n\x07payload\"C\n\x0bEventBundle\x124\n\
+    \x06events\x18\x01\x20\x03(\x0b2\x1c.capataz.events.ProcessEventR\x06eve\
+    nts*(\n\nProcessTag\x12\n\n\x06WORKER\x10\0\x12\x0e\n\nSUPERVISOR\x10\
+    \x01J\xe2\x0e\n\x06\x12\x04\0\07\x01\n\x08\n\x01\x0c\x12\x03\0\0\x12\n\
+    \x08\n\x01\x02\x12\x03\x02\0\x17\n\t\n\x02\x03\0\x12\x03\x04\0)\n\n\n\
+    \x02\x05\0\x12\x04\x06\0\t\x01\n\n\n\x03\x05\0\x01\x12\x03\x06\x05\x0f\n\
+    \x0b\n\x04\x05\0\x02\0\x12\x03\x07\x02\r\n\x0c\n\x05\x05\0\x02\0\x01\x12\
+    \x03\x07\x02\x08\n\x0c\n\x05\x05\0\x02\0\x02\x12\x03\x07\x0b\x0c\n\x0b\n\
+    \x04\x05\0\x02\x01\x12\x03\x08\x02\x11\n\x0c\n\x05\x05\0\x02\x01\x01\x12\
+    \x03\x08\x02\x0c\n\x0c\n\x05\x05\0\x02\x01\x02\x12\x03\x08\x0f\x10\n\n\n\
+    \x02\x04\0\x12\x04\x0b\0\x0f\x01\n\n\n\x03\x04\0\x01\x12\x03\x0b\x08\x13\
+    \n\x0b\n\x04\x04\0\x02\0\x12\x03\x0c\x02\x17\n\r\n\x05\x04\0\x02\0\x04\
+    \x12\x04\x0c\x02\x0b\x15\n\x0c\n\x05\x04\0\x02\0\x05\x12\x03\x0c\x02\x08\
+    \n\x0c\n\x05\x04\0\x02\0\x01\x12\x03\x0c\t\x11\n\x0c\n\x05\x04\0\x02\0\
+    \x03\x12\x03\x0c\x15\x16\n\x0b\n\x04\x04\0\x02\x01\x12\x03\r\x02\x17\n\r\
+    \n\x05\x04\0\x02\x01\x04\x12\x04\r\x02\x0c\x17\n\x0c\n\x05\x04\0\x02\x01\
+    \x05\x12\x03\r\x02\x08\n\x0c\n\x05\x04\0\x02\x01\x01\x12\x03\r\t\x12\n\
+    \x0c\n\x05\x04\0\x02\x01\x03\x12\x03\r\x15\x16\n\x0b\n\x04\x04\0\x02\x02\
+    \x12\x03\x0e\x02\x17\n\r\n\x05\x04\0\x02\x02\x04\x12\x04\x0e\x02\r\x17\n\
+    \x0c\n\x05\x04\0\x02\x02\x05\x12\x03\x0e\x02\x08\n\x0c\n\x05\x04\0\x02\
+    \x02\x01\x12\x03\x0e\t\x12\n\x0c\n\x05\x04\0\x02\x02\x03\x12\x03\x0e\x15\
+    \x16\n\n\n\x02\x04\x01\x12\x04\x11\0\x17\x01\n\n\n\x03\x04\x01\x01\x12\
+    \x03\x11\x08\x16\n\x0b\n\x04\x04\x01\x02\0\x12\x03\x12\x02\x17\n\r\n\x05\
+    \x04\x01\x02\0\x04\x12\x04\x12\x02\x11\x18\n\x0c\n\x05\x04\x01\x02\0\x06\
+    \x12\x03\x12\x02\r\n\x0c\n\x05\x04\x01\x02\0\x01\x12\x03\x12\x0e\x12\n\
+    \x0c\n\x05\x04\x01\x02\0\x03\x12\x03\x12\x15\x16\n\x0b\n\x04\x04\x01\x02\
+    \x01\x12\x03\x13\x02\x15\n\r\n\x05\x04\x01\x02\x01\x04\x12\x04\x13\x02\
+    \x12\x17\n\x0c\n\x05\x04\x01\x02\x01\x06\x12\x03\x13\x02\x0c\n\x0c\n\x05\
+    \x04\x01\x02\x01\x01\x12\x03\x13\r\x10\n\x0c\n\x05\x04\x01\x02\x01\x03\
+    \x12\x03\x13\x13\x14\n\x0b\n\x04\x04\x01\x02\x02\x12\x03\x14\x021\n\r\n\
+    \x05\x04\x01\x02\x02\x04\x12\x04\x14\x02\x13\x15\n\x0c\n\x05\x04\x01\x02\
+    \x02\x06\x12\x03\x14\x02\x1b\n\x0c\n\x05\x04\x01\x02\x02\x01\x12\x03\x14\
+    \x1c,\n\x0c\n\x05\x04\x01\x02\x02\x03\x12\x03\x14/0\n\x0b\n\x04\x04\x01\
+    \x02\x03\x12\x03\x15\x02%\n\r\n\x05\x04\x01\x02\x03\x04\x12\x04\x15\x02\
+    \x141\n\x0c\n\x05\x04\x01\x02\x03\x05\x12\x03\x15\x02\x08\n\x0c\n\x05\
+    \x04\x01\x02\x03\x01\x12\x03\x15\t\x20\n\x0c\n\x05\x04\x01\x02\x03\x03\
+    \x12\x03\x15#$\n\x0b\n\x04\x04\x01\x02\x04\x12\x03\x16\x02\x1b\n\r\n\x05\
+    \x04\x01\x02\x04\x04\x12\x04\x16\x02\x15%\n\x0c\n\x05\x04\x01\x02\x04\
+    \x05\x12\x03\x16\x02\x08\n\x0c\n\x05\x04\x01\x02\x04\x01\x12\x03\x16\t\
+    \x16\n\x0c\n\x05\x04\x01\x02\x04\x03\x12\x03\x16\x19\x1a\n\n\n\x02\x04\
+    \x02\x12\x04\x19\0\x1d\x01\n\n\n\x03\x04\x02\x01\x12\x03\x19\x08\x19\n\
+    \x0b\n\x04\x04\x02\x02\0\x12\x03\x1a\x02\x17\n\r\n\x05\x04\x02\x02\0\x04\
+    \x12\x04\x1a\x02\x19\x1b\n\x0c\n\x05\x04\x02\x02\0\x06\x12\x03\x1a\x02\r\
+    \n\x0c\n\x05\x04\x02\x02\0\x01\x12\x03\x1a\x0e\x12\n\x0c\n\x05\x04\x02\
+    \x02\0\x03\x12\x03\x1a\x15\x16\n\x0b\n\x04\x04\x02\x02\x01\x12\x03\x1b\
+    \x02\x15\n\r\n\x05\x04\x02\x02\x01\x04\x12\x04\x1b\x02\x1a\x17\n\x0c\n\
+    \x05\x04\x02\x02\x01\x06\x12\x03\x1b\x02\x0c\n\x0c\n\x05\x04\x02\x02\x01\
+    \x01\x12\x03\x1b\r\x10\n\x0c\n\x05\x04\x02\x02\x01\x03\x12\x03\x1b\x13\
+    \x14\n\x0b\n\x04\x04\x02\x02\x02\x12\x03\x1c\x021\n\r\n\x05\x04\x02\x02\
+    \x02\x04\x12\x04\x1c\x02\x1b\x15\n\x0c\n\x05\x04\x02\x02\x02\x06\x12\x03\
+    \x1c\x02\x1b\n\x0c\n\x05\x04\x02\x02\x02\x01\x12\x03\x1c\x1c,\n\x0c\n\
+    \x05\x04\x02\x02\x02\x03\x12\x03\x1c/0\n\n\n\x02\x04\x03\x12\x04\x1f\0#\
+    \x01\n\n\n\x03\x04\x03\x01\x12\x03\x1f\x08\x18\n\x0b\n\x04\x04\x03\x02\0\
+    \x12\x03\x20\x02\x17\n\r\n\x05\x04\x03\x02\0\x04\x12\x04\x20\x02\x1f\x1a\
+    \n\x0c\n\x05\x04\x03\x02\0\x06\x12\x03\x20\x02\r\n\x0c\n\x05\x04\x03\x02\
+    \0\x01\x12\x03\x20\x0e\x12\n\x0c\n\x05\x04\x03\x02\0\x03\x12\x03\x20\x15\
+    \x16\n\x0b\n\x04\x04\x03\x02\x01\x12\x03!\x02\x15\n\r\n\x05\x04\x03\x02\
+    \x01\x04\x12\x04!\x02\x20\x17\n\x0c\n\x05\x04\x03\x02\x01\x06\x12\x03!\
+    \x02\x0c\n\x0c\n\x05\x04\x03\x02\x01\x01\x12\x03!\r\x10\n\x0c\n\x05\x04\
+    \x03\x02\x01\x03\x12\x03!\x13\x14\n\x0b\n\x04\x04\x03\x02\x02\x12\x03\"\
+    \x021\n\r\n\x05\x04\x03\x02\x02\x04\x12\x04\"\x02!\x15\n\x0c\n\x05\x04\
+    \x03\x02\x02\x06\x12\x03\"\x02\x1b\n\x0c\n\x05\x04\x03\x02\x02\x01\x12\
+    \x03\"\x1c,\n\x0c\n\x05\x04\x03\x02\x02\x03\x12\x03\"/0\n\n\n\x02\x04\
+    \x04\x12\x04%\0*\x01\n\n\n\x03\x04\x04\x01\x12\x03%\x08\x15\n\x0b\n\x04\
+    \x04\x04\x02\0\x12\x03&\x02\x17\n\r\n\x05\x04\x04\x02\0\x04\x12\x04&\x02\
+    %\x17\n\x0c\n\x05\x04\x04\x02\0\x06\x12\x03&\x02\r\n\x0c\n\x05\x04\x04\
+    \x02\0\x01\x12\x03&\x0e\x12\n\x0c\n\x05\x04\x04\x02\0\x03\x12\x03&\x15\
+    \x16\n\x0b\n\x04\x04\x04\x02\x01\x12\x03'\x02\x15\n\r\n\x05\x04\x04\x02\
+    \x01\x04\x12\x04'\x02&\x17\n\x0c\n\x05\x04\x04\x02\x01\x06\x12\x03'\x02\
+    \x0c\n\x0c\n\x05\x04\x04\x02\x01\x01\x12\x03'\r\x10\n\x0c\n\x05\x04\x04\
+    \x02\x01\x03\x12\x03'\x13\x14\n\x0b\n\x04\x04\x04\x02\x02\x12\x03(\x02\
+    \x13\n\r\n\x05\x04\x04\x02\x02\x04\x12\x04(\x02'\x15\n\x0c\n\x05\x04\x04\
+    \x02\x02\x05\x12\x03(\x02\x08\n\x0c\n\x05\x04\x04\x02\x02\x01\x12\x03(\t\
+    \x0e\n\x0c\n\x05\x04\x04\x02\x02\x03\x12\x03(\x11\x12\n\x0b\n\x04\x04\
+    \x04\x02\x03\x12\x03)\x021\n\r\n\x05\x04\x04\x02\x03\x04\x12\x04)\x02(\
+    \x13\n\x0c\n\x05\x04\x04\x02\x03\x06\x12\x03)\x02\x1b\n\x0c\n\x05\x04\
+    \x04\x02\x03\x01\x12\x03)\x1c,\n\x0c\n\x05\x04\x04\x02\x03\x03\x12\x03)/\
+    0\n\n\n\x02\x04\x05\x12\x04,\03\x01\n\n\n\x03\x04\x05\x01\x12\x03,\x08\
+    \x14\n\x0c\n\x04\x04\x05\x08\0\x12\x04-\x022\x03\n\x0c\n\x05\x04\x05\x08\
+    \0\x01\x12\x03-\x08\x0f\n\x0b\n\x04\x04\x05\x02\0\x12\x03.\x04'\n\x0c\n\
+    \x05\x04\x05\x02\0\x06\x12\x03.\x04\x12\n\x0c\n\x05\x04\x05\x02\0\x01\
+    \x12\x03.\x13\"\n\x0c\n\x05\x04\x05\x02\0\x03\x12\x03.%&\n\x0b\n\x04\x04\
+    \x05\x02\x01\x12\x03/\x04-\n\x0c\n\x05\x04\x05\x02\x01\x06\x12\x03/\x04\
+    \x15\n\x0c\n\x05\x04\x05\x02\x01\x01\x12\x03/\x16(\n\x0c\n\x05\x04\x05\
+    \x02\x01\x03\x12\x03/+,\n\x0b\n\x04\x04\x05\x02\x02\x12\x030\x04+\n\x0c\
+    \n\x05\x04\x05\x02\x02\x06\x12\x030\x04\x14\n\x0c\n\x05\x04\x05\x02\x02\
+    \x01\x12\x030\x15&\n\x0c\n\x05\x04\x05\x02\x02\x03\x12\x030)*\n\x0b\n\
+    \x04\x04\x05\x02\x03\x12\x031\x04%\n\x0c\n\x05\x04\x05\x02\x03\x06\x12\
+    \x031\x04\x11\n\x0c\n\x05\x04\x05\x02\x03\x01\x12\x031\x12\x20\n\x0c\n\
+    \x05\x04\x05\x02\x03\x03\x12\x031#$\n\n\n\x02\x04\x06\x12\x045\07\x01\n\
+    \n\n\x03\x04\x06\x01\x12\x035\x08\x13\n\x0b\n\x04\x04\x06\x02\0\x12\x036\
+    \x02#\n\x0c\n\x05\x04\x06\x02\0\x04\x12\x036\x02\n\n\x0c\n\x05\x04\x06\
+    \x02\0\x06\x12\x036\x0b\x17\n\x0c\n\x05\x04\x06\x02\0\x01\x12\x036\x18\
+    \x1e\n\x0c\n\x05\x04\x06\x02\0\x03\x12\x036!\"b\x06proto3\
 ";
 
 static mut file_descriptor_proto_lazy: ::protobuf::lazy::Lazy<::protobuf::descriptor::FileDescriptorProto> = ::protobuf::lazy::Lazy {
