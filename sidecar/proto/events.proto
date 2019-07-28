@@ -2,17 +2,6 @@ syntax = "proto3";
 
 import "google/protobuf/timestamp.proto";
 
-message Greeting {
-  string person = 1;
-  string language = 2;
-}
-
-message GreetingList {
-  repeated Greeting greetings = 1;
-}
-
-////////////////////////////////////////////////////////////////////////////////
-
 enum ProcessTag {
   WORKER = 0;
   SUPERVISOR = 1;
@@ -58,4 +47,8 @@ message ProcessEvent {
     ProcessCompleted processCompleted = 3;
     ProcessFailed processFailed = 4;
   }
+}
+
+message EventBundle {
+  repeated ProcessEvent events = 1;
 }
