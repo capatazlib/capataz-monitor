@@ -11,7 +11,7 @@ enum ProcessTag {
 
 message ProcessInfo {
   string event_id  = 1;
-  string worker_id = 2;
+  string process_id = 2;
   string parent_id = 3;
 }
 
@@ -19,7 +19,7 @@ message ProcessStarted {
   ProcessInfo info = 1;
   ProcessTag tag = 2;
   google.protobuf.Timestamp create_timestamp = 3;
-  string first_restart_timestamp = 4;
+  google.protobuf.Timestamp first_restart_timestamp = 4;
   uint32 restart_count = 5;
 }
 

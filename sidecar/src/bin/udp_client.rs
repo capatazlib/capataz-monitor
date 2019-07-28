@@ -9,7 +9,7 @@ use protobuf::Message;
 fn main() {
     let mut pi = ProcessInfo::new();
     pi.set_event_id("1".to_string());
-    pi.set_worker_id("1".to_string());
+    pi.set_process_id("1".to_string());
 
     let mut ps = ProcessStarted::new();
     ps.set_info(pi);

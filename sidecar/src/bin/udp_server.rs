@@ -12,6 +12,7 @@ use tokio::net::UdpSocket;
 use tokio::prelude::*;
 
 use sidecar::events::EventBundle;
+use sidecar::metrics::handle_event_bundle;
 
 struct Server {
     socket: UdpSocket,
@@ -26,9 +27,11 @@ impl Future for Server {
         loop {
             let read_byte_count = try_ready!(self.socket.poll_recv(&mut self.buffer));
             if read_byte_count > 0 {
-                let event_bundle =
-                    parse_from_bytes::<EventBundle>(&self.buffer[0..read_byte_count]);
-                println!("Got from the wire {:?}", event_bundle)
+                let bundle_res = parse_from_bytes::<EventBundle>(&self.buffer[0..read_byte_count]);
+                match bundle_res {
+                    Ok(bundle) => handle_event_bundle(&bundle),
+                    Err(err) => println!("Got invalid bundle input:\n  error: {:?}", err),
+                }
             }
         }
     }
