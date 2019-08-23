@@ -4,53 +4,59 @@ package capataz.events;
 
 import "google/protobuf/timestamp.proto";
 
-enum ProcessTag {
+enum ChildType {
   WORKER = 0;
   SUPERVISOR = 1;
 }
 
-message ProcessInfo {
+message ChildInfo {
   string event_id  = 1;
-  string process_id = 2;
-  string parent_id = 3;
+  string instance_id = 2;
+  string child_id = 3;
+  string qualified_id = 5;
+  ChildType type = 6;
 }
 
-message ProcessStarted {
-  ProcessInfo info = 1;
-  ProcessTag tag = 2;
+message ChildStarted {
+  ChildInfo info = 1;
+  google.protobuf.Timestamp create_timestamp = 2;
+}
+
+message ChildRestarting {
+  ChildInfo info = 1;
+  google.protobuf.Timestamp create_timestamp = 2;
+}
+
+message ChildRestarted {
+  ChildInfo info = 1;
+  google.protobuf.Timestamp create_timestamp = 2;
+}
+
+message ChildExitShutdown {
+  ChildInfo info = 1;
+  google.protobuf.Timestamp create_timestamp = 2;
+}
+
+message ChildExitNormal {
+  ChildInfo info = 1;
+  google.protobuf.Timestamp create_timestamp = 2;
+}
+
+message ChildExitError {
+  ChildInfo info = 1;
+  string error = 2;
   google.protobuf.Timestamp create_timestamp = 3;
-  google.protobuf.Timestamp first_restart_timestamp = 4;
-  uint32 restart_count = 5;
 }
 
-message ProcessTerminated {
-  ProcessInfo info = 1;
-  ProcessTag tag = 2;
-  google.protobuf.Timestamp create_timestamp = 3;
-}
-
-message ProcessCompleted {
-  ProcessInfo info = 1;
-  ProcessTag tag = 2;
-  google.protobuf.Timestamp create_timestamp = 3;
-}
-
-message ProcessFailed {
-  ProcessInfo info = 1;
-  ProcessTag tag = 2;
-  string error = 3;
-  google.protobuf.Timestamp create_timestamp = 4;
-}
-
-message ProcessEvent {
+message ChildEvent {
   oneof payload {
-    ProcessStarted process_started = 1;
-    ProcessTerminated process_terminated = 2;
-    ProcessCompleted process_completed = 3;
-    ProcessFailed process_failed = 4;
+    ChildStarted process_started = 1;
+    ChildExitShutdown process_exit_shutdown = 2;
+    ChildExitNormal process_exit_normal = 3;
+    ChildExitError process_exit_error = 4;
   }
 }
 
 message EventBundle {
-  repeated ProcessEvent events = 1;
+  repeated ChildEvent events = 1;
 }
