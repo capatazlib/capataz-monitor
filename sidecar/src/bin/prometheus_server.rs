@@ -58,7 +58,7 @@ fn router_service() -> Result<RouterService, std::io::Error> {
 }
 
 fn main() {
-    let addr = ([127, 0, 0, 1], 3000).into();
+    let addr = ([127, 0, 0, 1], 4000).into();
     println!("HTTP ADDRESS: {:?}", addr);
 
     let server = Server::bind(&addr).serve(router_service).map_err(|e| {
